@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【講師用】第22回｜ロゴ・アイコンを作ろう</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+:root{--il:#FF9A00;--il-dark:#1a0a00;}
+.code-block{background:#1e1e1e;border-radius:12px;overflow:hidden;margin:16px 0;box-shadow:0 4px 20px rgba(0,0,0,.15);}
+.code-header{background:#2d2d2d;padding:8px 16px;display:flex;align-items:center;gap:10px;border-bottom:1px solid #444;}
+.code-dots{display:flex;gap:5px;}.code-dots span{width:10px;height:10px;border-radius:50%;}
+.code-dots .r{background:#ff5f56;}.code-dots .y{background:#ffbd2e;}.code-dots .g{background:#27c93f;}
+.code-filename{font-family:'JetBrains Mono',monospace;font-size:12px;color:#888;flex:1;}
+.code-body{padding:20px;font-family:'JetBrains Mono',monospace;font-size:13.5px;line-height:1.8;overflow-x:auto;color:#d4d4d4;}
+kbd{display:inline-block;background:#f0f0f0;border:1px solid #ccc;border-bottom:3px solid #aaa;border-radius:5px;padding:2px 8px;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;color:#333;white-space:nowrap;}
+code{background:#f3f0ed;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;}
+</style>
+</head>
+<body>
+<div class="hero" style="background: linear-gradient(135deg, #1a0a00 0%, #3d1f00 60%, #7a3d00 100%);">
+<div class="hero-inner">
+<div class="hero-top">
+<div class="hero-lesson-num" style="color:#ffb84d;background:rgba(255,154,0,.15);border-color:rgba(255,154,0,.35);">Illustrator LESSON 22 / 40</div>
+<div class="hero-tags">
+<span class="hero-tag ht-basic" style="background:rgba(255,154,0,.2);color:rgba(255,200,100,.9);">AIロゴ</span>
+<span class="hero-tag ht-time">⏱ 50分</span>
+<span class="hero-tag" style="background:rgba(255,200,0,.2);color:#ffe066;font-size:11px;font-weight:700;padding:3px 10px;border-radius:5px;">🎓 講師用</span>
+</div>
+</div>
+<h1 style="color:#fff;">ロゴ・アイコンを作ろう<br><em style="color:rgba(255,200,100,.7);font-size:16px;font-weight:400;">シンプルロゴのデザイン・ペンツール活用・ベクターアイコン</em></h1>
+<div class="hero-goal"><span class="gi">🎯</span><span>Illustratorでシンプルなロゴ・アイコンを制作できるようになる</span></div>
+</div>
+</div>
+<div class="wrap">
+<div class="section">
+<div class="sec-header">
+<div class="sec-num" style="background:#FF9A00;">1</div>
+<div class="sec-title">ロゴ・アイコンを作ろう</div>
+</div>
+<p class="body-text">今日は <strong>ロゴ・アイコンを作ろう</strong> を学びます。<br>シンプルロゴのデザイン・ペンツール活用・ベクターアイコンを順番に進めていきましょう。</p>
+<div class="callout info"><div class="callout-icon">💬</div>
+<div class="callout-body"><strong>講師がこう話す</strong>「今日は『ロゴ・アイコンを作ろう』について学びます。シンプルロゴのデザイン・ペンツール活用・ベクターアイコンを順番に実践しながら進めましょう。わからないことがあればすぐに手を挙げてください。」</div></div>
+<div class="callout tip"><div class="callout-icon">👆</div>
+<div class="callout-body"><strong>講師メモ</strong>実際にIllustratorを操作しながら説明する。完成形を先に見せてから作り始めると迷いにくい。詰まっている生徒には個別でサポート。</div></div>
+<table style="width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;">
+<tr style="background:#fff8f0;"><th style="padding:8px 12px;text-align:left;font-size:11px;color:#888;letter-spacing:.08em;">機能・ツール</th><th style="padding:8px 12px;text-align:left;">説明</th><th style="padding:8px 12px;text-align:left;">操作・ショートカット</th><th style="padding:8px 12px;text-align:left;">ポイント</th></tr>
+<tr>
+<td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FF9A00;white-space:nowrap;">ロゴの要件</td>
+<td style="font-size:13.5px;font-weight:700;">拡大縮小しても崩れない</td>
+<td style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;background:#f8f8f8;padding:6px 10px;border-radius:6px;">ベクターで作るのがマスト</td>
+<td style="font-size:12px;color:#888;">単色でも成立する</td>
+</tr>
+<tr>
+<td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FF9A00;white-space:nowrap;">シンプルロゴ制作</td>
+<td style="font-size:13.5px;font-weight:700;">図形ツール+テキストの組み合わせ</td>
+<td style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;background:#f8f8f8;padding:6px 10px;border-radius:6px;">複雑にしない・引き算で</td>
+<td style="font-size:12px;color:#888;">プロのロゴも意外にシンプル</td>
+</tr>
+<tr>
+<td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FF9A00;white-space:nowrap;">アイコン制作</td>
+<td style="font-size:13.5px;font-weight:700;">24×24pxのグリッドで作る</td>
+<td style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;background:#f8f8f8;padding:6px 10px;border-radius:6px;">見やすさ優先・細かすぎない</td>
+<td style="font-size:12px;color:#888;">pixelグリッドにスナップ</td>
+</tr>
+<tr>
+<td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FF9A00;white-space:nowrap;">SVGで書き出し</td>
+<td style="font-size:13.5px;font-weight:700;">Web用のロゴはSVGで</td>
+<td style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;background:#f8f8f8;padding:6px 10px;border-radius:6px;">拡大しても劣化しない</td>
+<td style="font-size:12px;color:#888;">色もコードで変えられる</td>
+</tr>
+</table>
+<p class="body-text" style="margin-top:20px;font-weight:700;">🚨 よくあるエラーと対処法</p>
+<div style="background:#fff5f5;border:1.5px solid #ffaaaa;border-radius:12px;padding:14px 18px;margin:10px 0;">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+<div style="background:#e00;color:#fff;font-size:11px;font-weight:900;padding:3px 10px;border-radius:6px;">エラー</div>
+<div style="font-weight:700;font-size:14px;color:#c00;">細かすぎるロゴ</div>
+</div>
+<div style="font-size:13.5px;line-height:1.8;">
+<code style="background:#ffe8e8;padding:2px 6px;border-radius:4px;">小さくしたら読めなくなった</code>
+<div style="background:#e8fff0;border:1px solid rgba(10,107,58,.2);border-radius:8px;padding:10px 14px;margin-top:8px;font-size:13px;color:#0a6b3a;">✅ 対処：シンプルに。小さいサイズでも読めることを確認する</div>
+</div></div>
+
+<div class="quiz"><div class="quiz-header"><div class="quiz-icon">❓</div><div class="quiz-title">クイズ</div></div>
+<div class="quiz-q">Webで使うロゴの最適な書き出し形式は？</div><div class="quiz-options">
+<div class="quiz-option wrong">PNG</div>
+<div class="quiz-option wrong">JPEG</div>
+<div class="quiz-option correct">SVG✅</div>
+</div></div>
+
+</div>
+<div class="section">
+<div class="sec-header">
+<div class="sec-num" style="background:#888;">✓</div>
+<div class="sec-title">まとめ・チェックリスト</div>
+</div>
+<div class="checklist"><div class="checklist-title">📋 できるようになったか確認しよう</div><div class="check-item"><div class="check-box"></div><div class="check-text">今日の学習内容を理解した</div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text">実際にIllustratorで操作できた</div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text">エラーが出たとき自分で調べて解決できた</div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text">次回の学習内容が何かわかった</div></div>
+</div>
+
+</div>
+<div class="extra-box"><div class="extra-header"><div class="extra-badge">🚀 EXTRA</div><div class="extra-title">早く終わった人への追加課題</div></div><div class="extra-item">ロゴの要件の応用練習をしてみよう</div>
+<div class="extra-item">シンプルロゴ制作の応用練習をしてみよう</div>
+<div class="extra-item">アイコン制作の応用練習をしてみよう</div>
+</div>
+
+<div style="height:40px;"></div>
+<div style="text-align:center;color:var(--muted);font-size:13px;padding:24px 0;border-top:1px solid var(--border);">
+第22回 / 全40回　｜　Illustrator基礎〜バナー制作コース　©2026
+</div>
+</div>
+<script>
+document.querySelectorAll('.check-box').forEach(b=>b.addEventListener('click',function(){this.classList.toggle('checked');}));
+</script>
+</body>
+</html>
