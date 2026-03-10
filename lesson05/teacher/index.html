@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【講師用】第05回｜オブジェクトの選択と操作</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+:root{--il:#FF9A00;--il-dark:#1a0a00;}
+.code-block{background:#1e1e1e;border-radius:12px;overflow:hidden;margin:16px 0;box-shadow:0 4px 20px rgba(0,0,0,.15);}
+.code-header{background:#2d2d2d;padding:8px 16px;display:flex;align-items:center;gap:10px;border-bottom:1px solid #444;}
+.code-dots{display:flex;gap:5px;}.code-dots span{width:10px;height:10px;border-radius:50%;}
+.code-dots .r{background:#ff5f56;}.code-dots .y{background:#ffbd2e;}.code-dots .g{background:#27c93f;}
+.code-filename{font-family:'JetBrains Mono',monospace;font-size:12px;color:#888;flex:1;}
+.code-body{padding:20px;font-family:'JetBrains Mono',monospace;font-size:13.5px;line-height:1.8;overflow-x:auto;color:#d4d4d4;}
+kbd{display:inline-block;background:#f0f0f0;border:1px solid #ccc;border-bottom:3px solid #aaa;border-radius:5px;padding:2px 8px;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;color:#333;white-space:nowrap;}
+code{background:#f3f0ed;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;}
+</style>
+</head>
+<body>
+<div class="hero" style="background: linear-gradient(135deg, #1a0a00 0%, #3d1f00 60%, #7a3d00 100%);">
+<div class="hero-inner">
+<div class="hero-top">
+<div class="hero-lesson-num" style="color:#ffb84d;background:rgba(255,154,0,.15);border-color:rgba(255,154,0,.35);">Illustrator LESSON 05 / 40</div>
+<div class="hero-tags">
+<span class="hero-tag ht-basic" style="background:rgba(255,154,0,.2);color:rgba(255,200,100,.9);">AI基礎</span>
+<span class="hero-tag ht-time">⏱ 50分</span>
+<span class="hero-tag" style="background:rgba(255,200,0,.2);color:#ffe066;font-size:11px;font-weight:700;padding:3px 10px;border-radius:5px;">🎓 講師用</span>
+</div>
+</div>
+<h1 style="color:#fff;">オブジェクトの選択と操作<br><em style="color:rgba(255,200,100,.7);font-size:16px;font-weight:400;">選択ツール・グループ化・重ね順・整列</em></h1>
+<div class="hero-goal"><span class="gi">🎯</span><span>選択ツールとダイレクト選択ツールを使い分け、グループ化・重ね順・整列を操作できるようになる</span></div>
+</div>
+</div>
+<div class="wrap">
+<div class="section-label" style="font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--muted);text-transform:uppercase;margin-bottom:14px;">📅 50分の流れ</div>
+<div class="timeline">
+<div class="tl-item"><div class="tl-row"><div class="tl-time">0〜10分</div><div class="tl-label">選択ツールの種類を説明</div><div class="tl-badge tb-talk">話す</div></div></div>
+<div class="tl-item"><div class="tl-row"><div class="tl-time">10〜30分</div><div class="tl-label">選択・グループ化・ロック・非表示を実践</div><div class="tl-badge tb-do">操作</div></div></div>
+<div class="tl-item"><div class="tl-row"><div class="tl-time">30〜45分</div><div class="tl-label">重ね順・整列・等間隔配置を実践</div><div class="tl-badge tb-do">操作</div></div></div>
+<div class="tl-item"><div class="tl-row"><div class="tl-time">40〜50分</div><div class="tl-label">クイズ・まとめ</div><div class="tl-badge tb-extra">まとめ</div></div></div>
+</div>
+
+<div class="section">
+<div class="sec-header">
+<div class="sec-num" style="background:#FF9A00;">1</div>
+<div class="sec-title">選択ツールとグループ化</div>
+<div class='sec-time'>0〜25分</div>
+</div>
+<div class="callout info"><div class="callout-icon">💬</div><div class="callout-body"><strong>講師がこう話す</strong>「選択ツール（V）はオブジェクト全体を選択、ダイレクト選択ツール（A）はアンカーポイント（頂点）を個別に選択します。複数の図形をグループ化（Ctrl+G）するとまとめて動かせます。」</div></div>
+<table style="width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;">
+<tr style="background:#fff8f0;"><th style="padding:8px 12px;text-align:left;font-size:11px;color:#888;letter-spacing:.08em;">機能・ツール</th><th style="padding:8px 12px;text-align:left;">説明</th><th style="padding:8px 12px;text-align:left;">操作・ショートカット</th><th style="padding:8px 12px;text-align:left;">ポイント</th></tr>
+<tr>
+<td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FF9A00;white-space:nowrap;">選択ツール V</td>
+<td style="font-size:13.5px;font-weight:700;">オブジェクト全体を選択</td>
+<td style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;background:#f8f8f8;padding:6px 10px;border-radius:6px;">クリックで1つ・Shiftで追加選択</td>
+<td style="font-size:12px;color:#888;">ドラッグで範囲選択も</td>
+</tr>
+<tr>
+<td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FF9A00;white-space:nowrap;">ダイレクト選択 A</td>
+<td style="font-size:13.5px;font-weight:700;">アンカーポイントを選択</td>
+<td style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;background:#f8f8f8;padding:6px 10px;border-radius:6px;">図形の頂点を個別移動</td>
+<td style="font-size:12px;color:#888;">形の変形に使う</td>
+</tr>
+<tr>
+<td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FF9A00;white-space:nowrap;">グループ化 Ctrl+G</td>
+<td style="font-size:13.5px;font-weight:700;">複数をまとめる</td>
+<td style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;background:#f8f8f8;padding:6px 10px;border-radius:6px;">ダブルクリックでグループ内を編集</td>
+<td style="font-size:12px;color:#888;">解除はCtrl+Shift+G</td>
+</tr>
+<tr>
+<td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FF9A00;white-space:nowrap;">ロック Ctrl+2</td>
+<td style="font-size:13.5px;font-weight:700;">オブジェクトを動かせなくする</td>
+<td style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;background:#f8f8f8;padding:6px 10px;border-radius:6px;">背景などを固定するのに便利</td>
+<td style="font-size:12px;color:#888;">解除はCtrl+Alt+2</td>
+</tr>
+</table><p class="body-text" style="margin-top:20px;font-weight:700;">🚨 よくあるエラーと対処法</p>
+<div style="background:#fff5f5;border:1.5px solid #ffaaaa;border-radius:12px;padding:14px 18px;margin:10px 0;">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+<div style="background:#e00;color:#fff;font-size:11px;font-weight:900;padding:3px 10px;border-radius:6px;">エラー</div>
+<div style="font-weight:700;font-size:14px;color:#c00;">グループの中の1つだけ動かしたい</div>
+</div>
+<div style="font-size:13.5px;line-height:1.8;">
+<code style="background:#ffe8e8;padding:2px 6px;border-radius:4px;">グループごと動いてしまう</code>
+<div style="background:#e8fff0;border:1px solid rgba(10,107,58,.2);border-radius:8px;padding:10px 14px;margin-top:8px;font-size:13px;color:#0a6b3a;">✅ 対処：ダブルクリックでグループ内に入ってから選択する</div>
+</div></div>
+<div class="callout tip"><div class="callout-icon">👆</div><div class="callout-body"><strong>講師メモ</strong>VとAの違いは実際に四角を選択して見せると一発で理解できる。</div></div>
+<div class="quiz"><div class="quiz-header"><div class="quiz-icon">❓</div><div class="quiz-title">クイズ</div></div>
+<div class="quiz-q">アンカーポイントを個別選択するツールは？</div><div class="quiz-options">
+<div class="quiz-option wrong">V（選択ツール）</div>
+<div class="quiz-option correct">A（ダイレクト選択）✅</div>
+<div class="quiz-option wrong">P（ペンツール）</div>
+</div></div>
+<div class="quiz"><div class="quiz-header"><div class="quiz-icon">❓</div><div class="quiz-title">クイズ</div></div>
+<div class="quiz-q">グループ化のショートカットは？</div><div class="quiz-options">
+<div class="quiz-option correct">Ctrl+G✅</div>
+<div class="quiz-option wrong">Ctrl+Shift+G</div>
+<div class="quiz-option wrong">Ctrl+A</div>
+</div></div>
+
+</div>
+<div class="section">
+<div class="sec-header">
+<div class="sec-num" style="background:#c94800;">2</div>
+<div class="sec-title">重ね順・整列・等間隔</div>
+<div class='sec-time'>25〜45分</div>
+</div>
+<div class="callout info"><div class="callout-icon">💬</div><div class="callout-body"><strong>講師がこう話す</strong>「Illustratorのオブジェクトには重ね順があります。後から描いたものが上に来ます。整列パネルでは選択したオブジェクトをキーオブジェクトを基準に揃えることができます。等間隔配置もここで設定します。」</div></div>
+<table style="width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;">
+<tr style="background:#fff8f0;"><th style="padding:8px 12px;text-align:left;font-size:11px;color:#888;letter-spacing:.08em;">機能・ツール</th><th style="padding:8px 12px;text-align:left;">説明</th><th style="padding:8px 12px;text-align:left;">操作・ショートカット</th><th style="padding:8px 12px;text-align:left;">ポイント</th></tr>
+<tr>
+<td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FF9A00;white-space:nowrap;">重ね順</td>
+<td style="font-size:13.5px;font-weight:700;">オブジェクトの上下関係</td>
+<td style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;background:#f8f8f8;padding:6px 10px;border-radius:6px;">Ctrl+]で前面へ・Ctrl+[で背面へ</td>
+<td style="font-size:12px;color:#888;">Ctrl+Shift+]で最前面</td>
+</tr>
+<tr>
+<td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FF9A00;white-space:nowrap;">整列パネル</td>
+<td style="font-size:13.5px;font-weight:700;">位置揃えと等間隔</td>
+<td style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;background:#f8f8f8;padding:6px 10px;border-radius:6px;">ウィンドウ→整列</td>
+<td style="font-size:12px;color:#888;">キーオブジェクトを基準に揃える</td>
+</tr>
+<tr>
+<td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FF9A00;white-space:nowrap;">キーオブジェクト</td>
+<td style="font-size:13.5px;font-weight:700;">整列の基準オブジェクト</td>
+<td style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;background:#f8f8f8;padding:6px 10px;border-radius:6px;">複数選択後にクリックして青枠に</td>
+<td style="font-size:12px;color:#888;">これを忘れると基準がバラバラに</td>
+</tr>
+<tr>
+<td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FF9A00;white-space:nowrap;">等間隔配置</td>
+<td style="font-size:13.5px;font-weight:700;">均等なスペースで並べる</td>
+<td style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;background:#f8f8f8;padding:6px 10px;border-radius:6px;">整列パネル下部の分布オプション</td>
+<td style="font-size:12px;color:#888;">px単位で間隔を指定できる</td>
+</tr>
+</table><p class="body-text" style="margin-top:20px;font-weight:700;">🚨 よくあるエラーと対処法</p>
+<div style="background:#fff5f5;border:1.5px solid #ffaaaa;border-radius:12px;padding:14px 18px;margin:10px 0;">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+<div style="background:#e00;color:#fff;font-size:11px;font-weight:900;padding:3px 10px;border-radius:6px;">エラー</div>
+<div style="font-weight:700;font-size:14px;color:#c00;">整列がおかしい方向にずれる</div>
+</div>
+<div style="font-size:13.5px;line-height:1.8;">
+<code style="background:#ffe8e8;padding:2px 6px;border-radius:4px;">キーオブジェクトを指定していない</code>
+<div style="background:#e8fff0;border:1px solid rgba(10,107,58,.2);border-radius:8px;padding:10px 14px;margin-top:8px;font-size:13px;color:#0a6b3a;">✅ 対処：整列前に必ずキーオブジェクトをクリックして選ぶ</div>
+</div></div>
+<div class="callout tip"><div class="callout-icon">👆</div><div class="callout-body"><strong>講師メモ</strong>整列のキーオブジェクト指定（クリックして青枠にする）は初心者が知らないことが多い。実演する。</div></div>
+<div class="quiz"><div class="quiz-header"><div class="quiz-icon">❓</div><div class="quiz-title">クイズ</div></div>
+<div class="quiz-q">オブジェクトを最前面に移動するショートカットは？</div><div class="quiz-options">
+<div class="quiz-option wrong">Ctrl+]</div>
+<div class="quiz-option correct">Ctrl+Shift+]✅</div>
+<div class="quiz-option wrong">Ctrl+F</div>
+</div></div>
+
+</div>
+
+<div class='section'><div class='sec-header'><div class='sec-num' style='background:#888;'>✓</div><div class='sec-title'>まとめ・チェックリスト</div></div><div class="checklist"><div class="checklist-title">📋 できるようになったか確認しよう</div><div class="check-item"><div class="check-box"></div><div class="check-text">選択ツール(V)とダイレクト選択(A)を使い分けられる</div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text">グループ化（Ctrl+G）と解除（Ctrl+Shift+G）ができる</div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text">重ね順を変えられる（Ctrl+]・Ctrl+[）</div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text">整列パネルでキーオブジェクトを基準に整列できる</div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text">等間隔配置ができる</div></div>
+</div>
+</div>
+<div class="extra-box"><div class="extra-header"><div class="extra-badge">🚀 EXTRA</div><div class="extra-title">早く終わった人への追加課題</div></div><div class="extra-item">レイヤーパネルを使ってオブジェクトを整理してみよう</div>
+<div class="extra-item">Ctrl+Alt+2で全てのロックを解除する方法を覚えよう</div>
+<div class="extra-item">等間隔配置で名刺サイズのグリッドを作ってみよう</div>
+</div>
+
+<div style="height:40px;"></div>
+<div style="text-align:center;color:var(--muted);font-size:13px;padding:24px 0;border-top:1px solid var(--border);">
+第05回 / 全40回　｜　Illustrator基礎〜バナー制作コース　©2026
+</div>
+</div>
+<script>
+document.querySelectorAll('.check-box').forEach(b=>b.addEventListener('click',function(){this.classList.toggle('checked');}));
+</script>
+</body>
+</html>

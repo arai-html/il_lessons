@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【講師用】第08回｜画像を配置しよう</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+:root{--il:#FF9A00;--il-dark:#1a0a00;}
+.code-block{background:#1e1e1e;border-radius:12px;overflow:hidden;margin:16px 0;box-shadow:0 4px 20px rgba(0,0,0,.15);}
+.code-header{background:#2d2d2d;padding:8px 16px;display:flex;align-items:center;gap:10px;border-bottom:1px solid #444;}
+.code-dots{display:flex;gap:5px;}.code-dots span{width:10px;height:10px;border-radius:50%;}
+.code-dots .r{background:#ff5f56;}.code-dots .y{background:#ffbd2e;}.code-dots .g{background:#27c93f;}
+.code-filename{font-family:'JetBrains Mono',monospace;font-size:12px;color:#888;flex:1;}
+.code-body{padding:20px;font-family:'JetBrains Mono',monospace;font-size:13.5px;line-height:1.8;overflow-x:auto;color:#d4d4d4;}
+kbd{display:inline-block;background:#f0f0f0;border:1px solid #ccc;border-bottom:3px solid #aaa;border-radius:5px;padding:2px 8px;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;color:#333;white-space:nowrap;}
+code{background:#f3f0ed;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;}
+</style>
+</head>
+<body>
+<div class="hero" style="background: linear-gradient(135deg, #1a0a00 0%, #3d1f00 60%, #7a3d00 100%);">
+<div class="hero-inner">
+<div class="hero-top">
+<div class="hero-lesson-num" style="color:#ffb84d;background:rgba(255,154,0,.15);border-color:rgba(255,154,0,.35);">Illustrator LESSON 08 / 40</div>
+<div class="hero-tags">
+<span class="hero-tag ht-basic" style="background:rgba(255,154,0,.2);color:rgba(255,200,100,.9);">AI基礎</span>
+<span class="hero-tag ht-time">⏱ 50分</span>
+<span class="hero-tag" style="background:rgba(255,200,0,.2);color:#ffe066;font-size:11px;font-weight:700;padding:3px 10px;border-radius:5px;">🎓 講師用</span>
+</div>
+</div>
+<h1 style="color:#fff;">画像を配置しよう<br><em style="color:rgba(255,200,100,.7);font-size:16px;font-weight:400;">リンク・埋め込み・画像の配置とトリミング</em></h1>
+<div class="hero-goal"><span class="gi">🎯</span><span>写真をIllustratorに配置しリンク・埋め込みの違いを理解してクリッピングマスクでトリミングできるようになる</span></div>
+</div>
+</div>
+<div class="wrap">
+<div class="section-label" style="font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--muted);text-transform:uppercase;margin-bottom:14px;">📅 50分の流れ</div>
+<div class="timeline">
+<div class="tl-item"><div class="tl-row"><div class="tl-time">0〜10分</div><div class="tl-label">リンクと埋め込みの違いを説明</div><div class="tl-badge tb-talk">話す</div></div></div>
+<div class="tl-item"><div class="tl-row"><div class="tl-time">10〜30分</div><div class="tl-label">写真を配置してサイズ調整</div><div class="tl-badge tb-do">操作</div></div></div>
+<div class="tl-item"><div class="tl-row"><div class="tl-time">30〜45分</div><div class="tl-label">クリッピングマスクで形に切り抜く</div><div class="tl-badge tb-do">操作</div></div></div>
+<div class="tl-item"><div class="tl-row"><div class="tl-time">40〜50分</div><div class="tl-label">クイズ・まとめ</div><div class="tl-badge tb-extra">まとめ</div></div></div>
+</div>
+
+<div class="section">
+<div class="sec-header">
+<div class="sec-num" style="background:#FF9A00;">1</div>
+<div class="sec-title">画像の配置（リンクと埋め込み）</div>
+<div class='sec-time'>0〜25分</div>
+</div>
+<div class="callout info"><div class="callout-icon">💬</div><div class="callout-body"><strong>講師がこう話す</strong>「ファイル→配置（Ctrl+Shift+P）で写真をAIに取り込めます。リンクはファイルを参照するだけなのでAIファイルが軽い反面、画像ファイルを一緒に管理する必要があります。埋め込みはAIの中に画像データを取り込むのでファイルが重くなります。納品・入稿時は埋め込みにするのが安全です。」</div></div>
+<table style="width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;">
+<tr style="background:#fff8f0;"><th style="padding:8px 12px;text-align:left;font-size:11px;color:#888;letter-spacing:.08em;">機能・ツール</th><th style="padding:8px 12px;text-align:left;">説明</th><th style="padding:8px 12px;text-align:left;">操作・ショートカット</th><th style="padding:8px 12px;text-align:left;">ポイント</th></tr>
+<tr>
+<td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FF9A00;white-space:nowrap;">配置 Ctrl+Shift+P</td>
+<td style="font-size:13.5px;font-weight:700;">外部ファイルをAIに配置</td>
+<td style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;background:#f8f8f8;padding:6px 10px;border-radius:6px;">ファイル→配置</td>
+<td style="font-size:12px;color:#888;">リンクまたは埋め込みで配置</td>
+</tr>
+<tr>
+<td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FF9A00;white-space:nowrap;">リンク配置</td>
+<td style="font-size:13.5px;font-weight:700;">元ファイルを参照</td>
+<td style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;background:#f8f8f8;padding:6px 10px;border-radius:6px;">AIが軽い</td>
+<td style="font-size:12px;color:#888;">画像ファイルと一緒に管理必須</td>
+</tr>
+<tr>
+<td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FF9A00;white-space:nowrap;">埋め込み</td>
+<td style="font-size:13.5px;font-weight:700;">AIに画像を取り込む</td>
+<td style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;background:#f8f8f8;padding:6px 10px;border-radius:6px;">ファイルが重くなる</td>
+<td style="font-size:12px;color:#888;">入稿・納品時は埋め込みが安全</td>
+</tr>
+<tr>
+<td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FF9A00;white-space:nowrap;">リンクパネル</td>
+<td style="font-size:13.5px;font-weight:700;">リンク画像の管理</td>
+<td style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;background:#f8f8f8;padding:6px 10px;border-radius:6px;">ウィンドウ→リンク</td>
+<td style="font-size:12px;color:#888;">埋め込みボタンで埋め込みに変更</td>
+</tr>
+</table><p class="body-text" style="margin-top:20px;font-weight:700;">🚨 よくあるエラーと対処法</p>
+<div style="background:#fff5f5;border:1.5px solid #ffaaaa;border-radius:12px;padding:14px 18px;margin:10px 0;">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+<div style="background:#e00;color:#fff;font-size:11px;font-weight:900;padding:3px 10px;border-radius:6px;">エラー</div>
+<div style="font-weight:700;font-size:14px;color:#c00;">画像を開いてしまう</div>
+</div>
+<div style="font-size:13.5px;line-height:1.8;">
+<code style="background:#ffe8e8;padding:2px 6px;border-radius:4px;">配置ではなく「開く」でAIを立ち上げた</code>
+<div style="background:#e8fff0;border:1px solid rgba(10,107,58,.2);border-radius:8px;padding:10px 14px;margin-top:8px;font-size:13px;color:#0a6b3a;">✅ 対処：ファイル→配置（Ctrl+Shift+P）を使う</div>
+</div></div>
+<div style="background:#fff5f5;border:1.5px solid #ffaaaa;border-radius:12px;padding:14px 18px;margin:10px 0;">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+<div style="background:#e00;color:#fff;font-size:11px;font-weight:900;padding:3px 10px;border-radius:6px;">エラー</div>
+<div style="font-weight:700;font-size:14px;color:#c00;">画像が荒く表示される</div>
+</div>
+<div style="font-size:13.5px;line-height:1.8;">
+<code style="background:#ffe8e8;padding:2px 6px;border-radius:4px;">表示解像度が低い</code>
+<div style="background:#e8fff0;border:1px solid rgba(10,107,58,.2);border-radius:8px;padding:10px 14px;margin-top:8px;font-size:13px;color:#0a6b3a;">✅ 対処：表示はアウトライン表示になっていないか確認。出力には影響なし</div>
+</div></div>
+<div class="callout tip"><div class="callout-icon">👆</div><div class="callout-body"><strong>講師メモ</strong>リンク切れのエラーは納品先でよく起きる。埋め込みの重要性を実際のトラブル例で話す。</div></div>
+<div class="quiz"><div class="quiz-header"><div class="quiz-icon">❓</div><div class="quiz-title">クイズ</div></div>
+<div class="quiz-q">入稿・納品時に画像の扱いはどちらが安全？</div><div class="quiz-options">
+<div class="quiz-option wrong">リンク</div>
+<div class="quiz-option correct">埋め込み✅</div>
+<div class="quiz-option wrong">どちらも同じ</div>
+</div></div>
+<div class="quiz"><div class="quiz-header"><div class="quiz-icon">❓</div><div class="quiz-title">クイズ</div></div>
+<div class="quiz-q">画像を配置するショートカットは？</div><div class="quiz-options">
+<div class="quiz-option wrong">Ctrl+P</div>
+<div class="quiz-option correct">Ctrl+Shift+P✅</div>
+<div class="quiz-option wrong">Ctrl+I</div>
+</div></div>
+
+</div>
+<div class="section">
+<div class="sec-header">
+<div class="sec-num" style="background:#c94800;">2</div>
+<div class="sec-title">配置画像のサイズ調整とマスク</div>
+<div class='sec-time'>25〜45分</div>
+</div>
+<div class="callout info"><div class="callout-icon">💬</div><div class="callout-body"><strong>講師がこう話す</strong>「配置した画像はShiftを押しながらコーナーをドラッグして縦横比を保ったまま拡大縮小します。クリッピングマスクで写真を丸・角丸・任意の形に切り抜けます。」</div></div>
+<table style="width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;">
+<tr style="background:#fff8f0;"><th style="padding:8px 12px;text-align:left;font-size:11px;color:#888;letter-spacing:.08em;">機能・ツール</th><th style="padding:8px 12px;text-align:left;">説明</th><th style="padding:8px 12px;text-align:left;">操作・ショートカット</th><th style="padding:8px 12px;text-align:left;">ポイント</th></tr>
+<tr>
+<td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FF9A00;white-space:nowrap;">縦横比を保って変形</td>
+<td style="font-size:13.5px;font-weight:700;">Shift+コーナードラッグ</td>
+<td style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;background:#f8f8f8;padding:6px 10px;border-radius:6px;">または変形パネルの🔒をONにして数値入力</td>
+<td style="font-size:12px;color:#888;">必ずShiftを使う習慣を</td>
+</tr>
+<tr>
+<td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FF9A00;white-space:nowrap;">クリッピングマスク</td>
+<td style="font-size:13.5px;font-weight:700;">好きな形で画像を切り抜く</td>
+<td style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;background:#f8f8f8;padding:6px 10px;border-radius:6px;">前面に形・背面に画像→Ctrl+7</td>
+<td style="font-size:12px;color:#888;">前回の復習</td>
+</tr>
+<tr>
+<td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FF9A00;white-space:nowrap;">画像の移動（マスク内）</td>
+<td style="font-size:13.5px;font-weight:700;">ダブルクリックで画像だけ移動</td>
+<td style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;background:#f8f8f8;padding:6px 10px;border-radius:6px;">マスクを解除せずに中の画像を動かせる</td>
+<td style="font-size:12px;color:#888;">構図の調整に</td>
+</tr>
+</table><p class="body-text" style="margin-top:20px;font-weight:700;">🚨 よくあるエラーと対処法</p>
+<div style="background:#fff5f5;border:1.5px solid #ffaaaa;border-radius:12px;padding:14px 18px;margin:10px 0;">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+<div style="background:#e00;color:#fff;font-size:11px;font-weight:900;padding:3px 10px;border-radius:6px;">エラー</div>
+<div style="font-weight:700;font-size:14px;color:#c00;">拡大したら画像が荒くなった</div>
+</div>
+<div style="font-size:13.5px;line-height:1.8;">
+<code style="background:#ffe8e8;padding:2px 6px;border-radius:4px;">低解像度の画像を大きくした</code>
+<div style="background:#e8fff0;border:1px solid rgba(10,107,58,.2);border-radius:8px;padding:10px 14px;margin-top:8px;font-size:13px;color:#0a6b3a;">✅ 対処：バナー用素材は最低でも書き出しサイズの2倍解像度を用意する</div>
+</div></div>
+<div class="callout tip"><div class="callout-icon">👆</div><div class="callout-body"><strong>講師メモ</strong>配置直後は鎖のアイコンを確認してリンクか埋め込みかを確認させる。</div></div>
+<div class="quiz"><div class="quiz-header"><div class="quiz-icon">❓</div><div class="quiz-title">クイズ</div></div>
+<div class="quiz-q">縦横比を保ちながら拡大縮小するには？</div><div class="quiz-options">
+<div class="quiz-option wrong">Altを押しながらドラッグ</div>
+<div class="quiz-option correct">Shiftを押しながらドラッグ✅</div>
+<div class="quiz-option wrong">Ctrlを押しながらドラッグ</div>
+</div></div>
+
+</div>
+
+<div class='section'><div class='sec-header'><div class='sec-num' style='background:#888;'>✓</div><div class='sec-title'>まとめ・チェックリスト</div></div><div class="checklist"><div class="checklist-title">📋 できるようになったか確認しよう</div><div class="check-item"><div class="check-box"></div><div class="check-text">ファイル→配置（Ctrl+Shift+P）で写真を配置できた</div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text">リンクと埋め込みの違いがわかった</div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text">入稿時は埋め込みにすることを覚えた</div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text">Shiftを押しながら縦横比を保って拡大縮小できた</div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text">クリッピングマスクで写真を丸く切り抜けた</div></div>
+</div>
+</div>
+<div class="extra-box"><div class="extra-header"><div class="extra-badge">🚀 EXTRA</div><div class="extra-title">早く終わった人への追加課題</div></div><div class="extra-item">複数の写真を同時に配置してグリッド状に並べてみよう</div>
+<div class="extra-item">リンクパネルで全画像を一括埋め込みする方法を調べてみよう</div>
+<div class="extra-item">配置画像をPhotoshopで再編集（編集アプリで開く）する方法を試してみよう</div>
+</div>
+
+<div style="height:40px;"></div>
+<div style="text-align:center;color:var(--muted);font-size:13px;padding:24px 0;border-top:1px solid var(--border);">
+第08回 / 全40回　｜　Illustrator基礎〜バナー制作コース　©2026
+</div>
+</div>
+<script>
+document.querySelectorAll('.check-box').forEach(b=>b.addEventListener('click',function(){this.classList.toggle('checked');}));
+</script>
+</body>
+</html>

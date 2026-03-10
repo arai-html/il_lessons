@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第02回｜図形ツールで形を描こう</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+:root{--il:#FF9A00;--il-dark:#1a0a00;}
+.code-block{background:#1e1e1e;border-radius:12px;overflow:hidden;margin:16px 0;box-shadow:0 4px 20px rgba(0,0,0,.15);}
+.code-header{background:#2d2d2d;padding:8px 16px;display:flex;align-items:center;gap:10px;border-bottom:1px solid #444;}
+.code-dots{display:flex;gap:5px;}.code-dots span{width:10px;height:10px;border-radius:50%;}
+.code-dots .r{background:#ff5f56;}.code-dots .y{background:#ffbd2e;}.code-dots .g{background:#27c93f;}
+.code-filename{font-family:'JetBrains Mono',monospace;font-size:12px;color:#888;flex:1;}
+.code-body{padding:20px;font-family:'JetBrains Mono',monospace;font-size:13.5px;line-height:1.8;overflow-x:auto;color:#d4d4d4;}
+kbd{display:inline-block;background:#f0f0f0;border:1px solid #ccc;border-bottom:3px solid #aaa;border-radius:5px;padding:2px 8px;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;color:#333;white-space:nowrap;}
+code{background:#f3f0ed;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;}
+</style>
+</head>
+<body>
+<div class="hero" style="background: linear-gradient(135deg, #1a0a00 0%, #3d1f00 60%, #7a3d00 100%);">
+<div class="hero-inner">
+<div class="hero-top">
+<div class="hero-lesson-num" style="color:#ffb84d;background:rgba(255,154,0,.15);border-color:rgba(255,154,0,.35);">Illustrator LESSON 02 / 40</div>
+<div class="hero-tags">
+<span class="hero-tag ht-basic" style="background:rgba(255,154,0,.2);color:rgba(255,200,100,.9);">AI基礎</span>
+<span class="hero-tag ht-time">⏱ 50分</span>
+
+</div>
+</div>
+<h1 style="color:#fff;">図形ツールで形を描こう<br><em style="color:rgba(255,200,100,.7);font-size:16px;font-weight:400;">長方形・楕円・多角形・星形ツールの使い方</em></h1>
+<div class="hero-goal"><span class="gi">🎯</span><span>図形ツールを使って正確なサイズの長方形・正円・多角形・星形を描けるようになる</span></div>
+</div>
+</div>
+<div class="wrap">
+
+<div class="section">
+<div class="sec-header">
+<div class="sec-num" style="background:#FF9A00;">1</div>
+<div class="sec-title">長方形・楕円・多角形ツール</div>
+<div class='sec-time'>0〜25分</div>
+</div>
+<table style="width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;">
+<tr style="background:#fff8f0;"><th style="padding:8px 12px;text-align:left;font-size:11px;color:#888;letter-spacing:.08em;">機能・ツール</th><th style="padding:8px 12px;text-align:left;">説明</th><th style="padding:8px 12px;text-align:left;">操作・ショートカット</th><th style="padding:8px 12px;text-align:left;">ポイント</th></tr>
+<tr>
+<td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FF9A00;white-space:nowrap;">長方形ツール M</td>
+<td style="font-size:13.5px;font-weight:700;">四角形を描く</td>
+<td style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;background:#f8f8f8;padding:6px 10px;border-radius:6px;">クリックでサイズ入力・Shiftで正方形</td>
+<td style="font-size:12px;color:#888;">最も使う図形ツール</td>
+</tr>
+<tr>
+<td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FF9A00;white-space:nowrap;">楕円形ツール L</td>
+<td style="font-size:13.5px;font-weight:700;">楕円・正円を描く</td>
+<td style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;background:#f8f8f8;padding:6px 10px;border-radius:6px;">Shiftで正円になる</td>
+<td style="font-size:12px;color:#888;">ボタンやアイコンに頻出</td>
+</tr>
+<tr>
+<td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FF9A00;white-space:nowrap;">多角形ツール</td>
+<td style="font-size:13.5px;font-weight:700;">三角・六角形など</td>
+<td style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;background:#f8f8f8;padding:6px 10px;border-radius:6px;">ドラッグ中↑↓キーで辺の数を変更</td>
+<td style="font-size:12px;color:#888;">星形と同じツールグループ</td>
+</tr>
+<tr>
+<td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FF9A00;white-space:nowrap;">角丸長方形</td>
+<td style="font-size:13.5px;font-weight:700;">丸みのある四角</td>
+<td style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;background:#f8f8f8;padding:6px 10px;border-radius:6px;">プロパティで角の丸みをpxで指定</td>
+<td style="font-size:12px;color:#888;">ボタン・カード背景に多用</td>
+</tr>
+</table><p class="body-text" style="margin-top:20px;font-weight:700;">🚨 よくあるエラーと対処法</p>
+<div style="background:#fff5f5;border:1.5px solid #ffaaaa;border-radius:12px;padding:14px 18px;margin:10px 0;">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+<div style="background:#e00;color:#fff;font-size:11px;font-weight:900;padding:3px 10px;border-radius:6px;">エラー</div>
+<div style="font-weight:700;font-size:14px;color:#c00;">Shiftを忘れて比率が崩れる</div>
+</div>
+<div style="font-size:13.5px;line-height:1.8;">
+<code style="background:#ffe8e8;padding:2px 6px;border-radius:4px;">正円のつもりが楕円になる</code>
+<div style="background:#e8fff0;border:1px solid rgba(10,107,58,.2);border-radius:8px;padding:10px 14px;margin-top:8px;font-size:13px;color:#0a6b3a;">✅ 対処：Shiftを押しながらドラッグする</div>
+</div></div>
+<div style="background:#fff5f5;border:1.5px solid #ffaaaa;border-radius:12px;padding:14px 18px;margin:10px 0;">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+<div style="background:#e00;color:#fff;font-size:11px;font-weight:900;padding:3px 10px;border-radius:6px;">エラー</div>
+<div style="font-weight:700;font-size:14px;color:#c00;">ドラッグ方向で形が決まることを知らない</div>
+</div>
+<div style="font-size:13.5px;line-height:1.8;">
+<code style="background:#ffe8e8;padding:2px 6px;border-radius:4px;">左上から右下へドラッグが基本</code>
+<div style="background:#e8fff0;border:1px solid rgba(10,107,58,.2);border-radius:8px;padding:10px 14px;margin-top:8px;font-size:13px;color:#0a6b3a;">✅ 対処：Alt押しでクリック位置を中心に描ける</div>
+</div></div>
+<div class="quiz"><div class="quiz-header"><div class="quiz-icon">❓</div><div class="quiz-title">クイズ</div></div>
+<div class="quiz-q">正円を描くショートカットキーの組み合わせは？</div><div class="quiz-options">
+<div class="quiz-option" onclick="answer(this,false)">L + Ctrl</div>
+<div class="quiz-option" onclick="answer(this,true)">L + Shift押しながらドラッグ</div>
+<div class="quiz-option" onclick="answer(this,false)">L + Alt</div>
+</div><div class="quiz-ans-msg correct" style="display:none;margin-top:10px;padding:10px 14px;background:#e8fff0;border-radius:8px;color:#0a6b3a;font-size:13.5px;">✅ 正解！</div><div class="quiz-ans-msg wrong" style="display:none;margin-top:10px;padding:10px 14px;background:#fff8e0;border-radius:8px;color:#7a5500;font-size:13.5px;">❌ もう一度考えてみよう！</div></div>
+<div class="quiz"><div class="quiz-header"><div class="quiz-icon">❓</div><div class="quiz-title">クイズ</div></div>
+<div class="quiz-q">多角形の辺の数をドラッグ中に変えるキーは？</div><div class="quiz-options">
+<div class="quiz-option" onclick="answer(this,false)">Shiftキー</div>
+<div class="quiz-option" onclick="answer(this,false)">←→キー</div>
+<div class="quiz-option" onclick="answer(this,true)">↑↓キー</div>
+</div><div class="quiz-ans-msg correct" style="display:none;margin-top:10px;padding:10px 14px;background:#e8fff0;border-radius:8px;color:#0a6b3a;font-size:13.5px;">✅ 正解！</div><div class="quiz-ans-msg wrong" style="display:none;margin-top:10px;padding:10px 14px;background:#fff8e0;border-radius:8px;color:#7a5500;font-size:13.5px;">❌ もう一度考えてみよう！</div></div>
+
+</div>
+<div class="section">
+<div class="sec-header">
+<div class="sec-num" style="background:#c94800;">2</div>
+<div class="sec-title">星形・直線・変形の基本</div>
+<div class='sec-time'>25〜45分</div>
+</div>
+<table style="width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;">
+<tr style="background:#fff8f0;"><th style="padding:8px 12px;text-align:left;font-size:11px;color:#888;letter-spacing:.08em;">機能・ツール</th><th style="padding:8px 12px;text-align:left;">説明</th><th style="padding:8px 12px;text-align:left;">操作・ショートカット</th><th style="padding:8px 12px;text-align:left;">ポイント</th></tr>
+<tr>
+<td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FF9A00;white-space:nowrap;">星形ツール</td>
+<td style="font-size:13.5px;font-weight:700;">星・花形を描く</td>
+<td style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;background:#f8f8f8;padding:6px 10px;border-radius:6px;">ドラッグ中↑↓で頂点数・Ctrl押しで内半径</td>
+<td style="font-size:12px;color:#888;">バナーの装飾によく使う</td>
+</tr>
+<tr>
+<td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FF9A00;white-space:nowrap;">直線ツール \</td>
+<td style="font-size:13.5px;font-weight:700;">直線を描く</td>
+<td style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;background:#f8f8f8;padding:6px 10px;border-radius:6px;">Shiftで水平・垂直・45度固定</td>
+<td style="font-size:12px;color:#888;">区切り線・矢印に</td>
+</tr>
+<tr>
+<td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FF9A00;white-space:nowrap;">変形パネル</td>
+<td style="font-size:13.5px;font-weight:700;">数値で正確に位置・サイズ変更</td>
+<td style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;background:#f8f8f8;padding:6px 10px;border-radius:6px;">W×H・X・Y座標</td>
+<td style="font-size:12px;color:#888;">プロパティパネルでも同じことができる</td>
+</tr>
+<tr>
+<td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FF9A00;white-space:nowrap;">整列パネル</td>
+<td style="font-size:13.5px;font-weight:700;">複数オブジェクトを揃える</td>
+<td style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;background:#f8f8f8;padding:6px 10px;border-radius:6px;">水平・垂直方向に整列・等間隔</td>
+<td style="font-size:12px;color:#888;">デザインの品質が上がる</td>
+</tr>
+</table><p class="body-text" style="margin-top:20px;font-weight:700;">🚨 よくあるエラーと対処法</p>
+<div style="background:#fff5f5;border:1.5px solid #ffaaaa;border-radius:12px;padding:14px 18px;margin:10px 0;">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+<div style="background:#e00;color:#fff;font-size:11px;font-weight:900;padding:3px 10px;border-radius:6px;">エラー</div>
+<div style="font-weight:700;font-size:14px;color:#c00;">変形パネルの鍵マークを忘れる</div>
+</div>
+<div style="font-size:13.5px;line-height:1.8;">
+<code style="background:#ffe8e8;padding:2px 6px;border-radius:4px;">Wだけ変えたら縦横比が崩れた</code>
+<div style="background:#e8fff0;border:1px solid rgba(10,107,58,.2);border-radius:8px;padding:10px 14px;margin-top:8px;font-size:13px;color:#0a6b3a;">✅ 対処：🔒鍵マークをONにしてから数値を変える</div>
+</div></div>
+<div class="quiz"><div class="quiz-header"><div class="quiz-icon">❓</div><div class="quiz-title">クイズ</div></div>
+<div class="quiz-q">変形パネルで縦横比を固定するには？</div><div class="quiz-options">
+<div class="quiz-option" onclick="answer(this,false)">Shiftを押す</div>
+<div class="quiz-option" onclick="answer(this,true)">🔒鍵アイコンをONにする</div>
+<div class="quiz-option" onclick="answer(this,false)">Altを押す</div>
+</div><div class="quiz-ans-msg correct" style="display:none;margin-top:10px;padding:10px 14px;background:#e8fff0;border-radius:8px;color:#0a6b3a;font-size:13.5px;">✅ 正解！</div><div class="quiz-ans-msg wrong" style="display:none;margin-top:10px;padding:10px 14px;background:#fff8e0;border-radius:8px;color:#7a5500;font-size:13.5px;">❌ もう一度考えてみよう！</div></div>
+
+</div>
+
+<div class='section'><div class='sec-header'><div class='sec-num' style='background:#888;'>✓</div><div class='sec-title'>まとめ・チェックリスト</div></div><div class="checklist"><div class="checklist-title">📋 できるようになったか確認しよう</div><div class="check-item"><div class="check-box"></div><div class="check-text">長方形・楕円・多角形ツールで図形が描ける</div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text">Shiftを押しながらドラッグで正方形・正円が描ける</div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text">変形パネルで正確な数値でサイズ・位置が変えられる</div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text">整列パネルで複数オブジェクトを揃えられる</div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text">星形ツールで頂点数を変えた星が描ける</div></div>
+</div>
+</div>
+<div class="extra-box"><div class="extra-header"><div class="extra-badge">🚀 EXTRA</div><div class="extra-title">早く終わった人への追加課題</div></div><div class="extra-item">整列パネルで5つの円を等間隔に並べてみよう</div>
+<div class="extra-item">多角形ツールで正三角形・正六角形を描いてみよう</div>
+<div class="extra-item">直線ツールで点線（破線）を作ってみよう（線パネルで設定）</div>
+</div>
+
+<div style="height:40px;"></div>
+<div style="text-align:center;color:var(--muted);font-size:13px;padding:24px 0;border-top:1px solid var(--border);">
+第02回 / 全40回　｜　Illustrator基礎〜バナー制作コース　©2026
+</div>
+</div>
+<script>
+function answer(el,ok){
+  var q=el.closest('.quiz');
+  q.querySelectorAll('.quiz-option').forEach(o=>{o.style.pointerEvents='none';o.style.opacity='0.5';});
+  el.style.opacity='1';
+  el.classList.add(ok?'correct':'wrong');
+  q.querySelectorAll('.quiz-ans-msg').forEach(m=>m.style.display='none');
+  q.querySelector('.quiz-ans-msg.'+(ok?'correct':'wrong')).style.display='block';
+}
+document.querySelectorAll('.check-box').forEach(b=>b.addEventListener('click',function(){this.classList.toggle('checked');}));
+</script>
+</body>
+</html>

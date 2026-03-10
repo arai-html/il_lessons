@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第07回｜ペンツールでパスを描こう②</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+:root{--il:#FF9A00;--il-dark:#1a0a00;}
+.code-block{background:#1e1e1e;border-radius:12px;overflow:hidden;margin:16px 0;box-shadow:0 4px 20px rgba(0,0,0,.15);}
+.code-header{background:#2d2d2d;padding:8px 16px;display:flex;align-items:center;gap:10px;border-bottom:1px solid #444;}
+.code-dots{display:flex;gap:5px;}.code-dots span{width:10px;height:10px;border-radius:50%;}
+.code-dots .r{background:#ff5f56;}.code-dots .y{background:#ffbd2e;}.code-dots .g{background:#27c93f;}
+.code-filename{font-family:'JetBrains Mono',monospace;font-size:12px;color:#888;flex:1;}
+.code-body{padding:20px;font-family:'JetBrains Mono',monospace;font-size:13.5px;line-height:1.8;overflow-x:auto;color:#d4d4d4;}
+kbd{display:inline-block;background:#f0f0f0;border:1px solid #ccc;border-bottom:3px solid #aaa;border-radius:5px;padding:2px 8px;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;color:#333;white-space:nowrap;}
+code{background:#f3f0ed;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;}
+</style>
+</head>
+<body>
+<div class="hero" style="background: linear-gradient(135deg, #1a0a00 0%, #3d1f00 60%, #7a3d00 100%);">
+<div class="hero-inner">
+<div class="hero-top">
+<div class="hero-lesson-num" style="color:#ffb84d;background:rgba(255,154,0,.15);border-color:rgba(255,154,0,.35);">Illustrator LESSON 07 / 40</div>
+<div class="hero-tags">
+<span class="hero-tag ht-basic" style="background:rgba(255,154,0,.2);color:rgba(255,200,100,.9);">AIパス</span>
+<span class="hero-tag ht-time">⏱ 50分</span>
+
+</div>
+</div>
+<h1 style="color:#fff;">ペンツールでパスを描こう②<br><em style="color:rgba(255,200,100,.7);font-size:16px;font-weight:400;">パスファインダー・シェイプモード・複合パス</em></h1>
+<div class="hero-goal"><span class="gi">🎯</span><span>パスファインダーを使って図形の合成・型抜き・交差を使いこなせるようになる</span></div>
+</div>
+</div>
+<div class="wrap">
+
+<div class="section">
+<div class="sec-header">
+<div class="sec-num" style="background:#FF9A00;">1</div>
+<div class="sec-title">パスファインダー</div>
+<div class='sec-time'>0〜25分</div>
+</div>
+<table style="width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;">
+<tr style="background:#fff8f0;"><th style="padding:8px 12px;text-align:left;font-size:11px;color:#888;letter-spacing:.08em;">機能・ツール</th><th style="padding:8px 12px;text-align:left;">説明</th><th style="padding:8px 12px;text-align:left;">操作・ショートカット</th><th style="padding:8px 12px;text-align:left;">ポイント</th></tr>
+<tr>
+<td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FF9A00;white-space:nowrap;">合体</td>
+<td style="font-size:13.5px;font-weight:700;">複数図形を1つに</td>
+<td style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;background:#f8f8f8;padding:6px 10px;border-radius:6px;">前面・背面の色は無関係に合体</td>
+<td style="font-size:12px;color:#888;">ロゴなどの複雑なシルエットに</td>
+</tr>
+<tr>
+<td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FF9A00;white-space:nowrap;">前面オブジェクトで型抜き</td>
+<td style="font-size:13.5px;font-weight:700;">前面の形で後ろを切り抜く</td>
+<td style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;background:#f8f8f8;padding:6px 10px;border-radius:6px;">ドーナツ・窓抜きなど</td>
+<td style="font-size:12px;color:#888;">よく使う★★★</td>
+</tr>
+<tr>
+<td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FF9A00;white-space:nowrap;">交差</td>
+<td style="font-size:13.5px;font-weight:700;">重なった部分だけ残す</td>
+<td style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;background:#f8f8f8;padding:6px 10px;border-radius:6px;">2つの形の共通部分</td>
+<td style="font-size:12px;color:#888;">幾何学パターンに</td>
+</tr>
+<tr>
+<td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FF9A00;white-space:nowrap;">中マド</td>
+<td style="font-size:13.5px;font-weight:700;">重なった部分を穴にする</td>
+<td style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;background:#f8f8f8;padding:6px 10px;border-radius:6px;">複合パスに似た効果</td>
+<td style="font-size:12px;color:#888;">テキストを図形で抜くときに</td>
+</tr>
+</table><p class="body-text" style="margin-top:20px;font-weight:700;">🚨 よくあるエラーと対処法</p>
+<div style="background:#fff5f5;border:1.5px solid #ffaaaa;border-radius:12px;padding:14px 18px;margin:10px 0;">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+<div style="background:#e00;color:#fff;font-size:11px;font-weight:900;padding:3px 10px;border-radius:6px;">エラー</div>
+<div style="font-weight:700;font-size:14px;color:#c00;">型抜きする向きが逆</div>
+</div>
+<div style="font-size:13.5px;line-height:1.8;">
+<code style="background:#ffe8e8;padding:2px 6px;border-radius:4px;">背面で前面を抜いてしまう</code>
+<div style="background:#e8fff0;border:1px solid rgba(10,107,58,.2);border-radius:8px;padding:10px 14px;margin-top:8px;font-size:13px;color:#0a6b3a;">✅ 対処：前面オブジェクトが型になる。抜きたい形を前面にする</div>
+</div></div>
+<div class="quiz"><div class="quiz-header"><div class="quiz-icon">❓</div><div class="quiz-title">クイズ</div></div>
+<div class="quiz-q">ドーナツ型を作るパスファインダーは？</div><div class="quiz-options">
+<div class="quiz-option" onclick="answer(this,false)">合体</div>
+<div class="quiz-option" onclick="answer(this,true)">前面オブジェクトで型抜き</div>
+<div class="quiz-option" onclick="answer(this,false)">交差</div>
+</div><div class="quiz-ans-msg correct" style="display:none;margin-top:10px;padding:10px 14px;background:#e8fff0;border-radius:8px;color:#0a6b3a;font-size:13.5px;">✅ 正解！</div><div class="quiz-ans-msg wrong" style="display:none;margin-top:10px;padding:10px 14px;background:#fff8e0;border-radius:8px;color:#7a5500;font-size:13.5px;">❌ もう一度考えてみよう！</div></div>
+<div class="quiz"><div class="quiz-header"><div class="quiz-icon">❓</div><div class="quiz-title">クイズ</div></div>
+<div class="quiz-q">パスファインダーパネルを開くメニューは？</div><div class="quiz-options">
+<div class="quiz-option" onclick="answer(this,false)">編集→パスファインダー</div>
+<div class="quiz-option" onclick="answer(this,true)">ウィンドウ→パスファインダー</div>
+<div class="quiz-option" onclick="answer(this,false)">オブジェクト→パスファインダー</div>
+</div><div class="quiz-ans-msg correct" style="display:none;margin-top:10px;padding:10px 14px;background:#e8fff0;border-radius:8px;color:#0a6b3a;font-size:13.5px;">✅ 正解！</div><div class="quiz-ans-msg wrong" style="display:none;margin-top:10px;padding:10px 14px;background:#fff8e0;border-radius:8px;color:#7a5500;font-size:13.5px;">❌ もう一度考えてみよう！</div></div>
+
+</div>
+<div class="section">
+<div class="sec-header">
+<div class="sec-num" style="background:#c94800;">2</div>
+<div class="sec-title">複合パスとクリッピングマスク</div>
+<div class='sec-time'>25〜45分</div>
+</div>
+<table style="width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;">
+<tr style="background:#fff8f0;"><th style="padding:8px 12px;text-align:left;font-size:11px;color:#888;letter-spacing:.08em;">機能・ツール</th><th style="padding:8px 12px;text-align:left;">説明</th><th style="padding:8px 12px;text-align:left;">操作・ショートカット</th><th style="padding:8px 12px;text-align:left;">ポイント</th></tr>
+<tr>
+<td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FF9A00;white-space:nowrap;">複合パス Ctrl+8</td>
+<td style="font-size:13.5px;font-weight:700;">複数パスを1オブジェクトに</td>
+<td style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;background:#f8f8f8;padding:6px 10px;border-radius:6px;">内側に穴が開く</td>
+<td style="font-size:12px;color:#888;">文字の内側の穴も複合パス</td>
+</tr>
+<tr>
+<td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FF9A00;white-space:nowrap;">クリッピングマスク Ctrl+7</td>
+<td style="font-size:13.5px;font-weight:700;">前面図形で背面を切り抜き</td>
+<td style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;background:#f8f8f8;padding:6px 10px;border-radius:6px;">写真を丸く切り抜くのに使う</td>
+<td style="font-size:12px;color:#888;">解除はオブジェクト→クリッピングマスクを解除</td>
+</tr>
+<tr>
+<td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FF9A00;white-space:nowrap;">マスクの編集</td>
+<td style="font-size:13.5px;font-weight:700;">マスク適用後に中の画像を移動</td>
+<td style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;background:#f8f8f8;padding:6px 10px;border-radius:6px;">ダブルクリックでマスク内を編集</td>
+<td style="font-size:12px;color:#888;">画像の表示位置を調整できる</td>
+</tr>
+</table><p class="body-text" style="margin-top:20px;font-weight:700;">🚨 よくあるエラーと対処法</p>
+<div style="background:#fff5f5;border:1.5px solid #ffaaaa;border-radius:12px;padding:14px 18px;margin:10px 0;">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+<div style="background:#e00;color:#fff;font-size:11px;font-weight:900;padding:3px 10px;border-radius:6px;">エラー</div>
+<div style="font-weight:700;font-size:14px;color:#c00;">クリッピングマスクが逆になる</div>
+</div>
+<div style="font-size:13.5px;line-height:1.8;">
+<code style="background:#ffe8e8;padding:2px 6px;border-radius:4px;">写真が前面・図形が背面の状態</code>
+<div style="background:#e8fff0;border:1px solid rgba(10,107,58,.2);border-radius:8px;padding:10px 14px;margin-top:8px;font-size:13px;color:#0a6b3a;">✅ 対処：図形を最前面（Ctrl+Shift+]）にしてからCtrl+7</div>
+</div></div>
+<div class="quiz"><div class="quiz-header"><div class="quiz-icon">❓</div><div class="quiz-title">クイズ</div></div>
+<div class="quiz-q">クリッピングマスクのショートカットは？</div><div class="quiz-options">
+<div class="quiz-option" onclick="answer(this,true)">Ctrl+7</div>
+<div class="quiz-option" onclick="answer(this,false)">Ctrl+8</div>
+<div class="quiz-option" onclick="answer(this,false)">Ctrl+M</div>
+</div><div class="quiz-ans-msg correct" style="display:none;margin-top:10px;padding:10px 14px;background:#e8fff0;border-radius:8px;color:#0a6b3a;font-size:13.5px;">✅ 正解！</div><div class="quiz-ans-msg wrong" style="display:none;margin-top:10px;padding:10px 14px;background:#fff8e0;border-radius:8px;color:#7a5500;font-size:13.5px;">❌ もう一度考えてみよう！</div></div>
+<div class="quiz"><div class="quiz-header"><div class="quiz-icon">❓</div><div class="quiz-title">クイズ</div></div>
+<div class="quiz-q">写真を丸く切り抜くには？</div><div class="quiz-options">
+<div class="quiz-option" onclick="answer(this,true)">前面に円・背面に写真を置いてCtrl+7</div>
+<div class="quiz-option" onclick="answer(this,false)">前面に写真・背面に円を置いてCtrl+7</div>
+<div class="quiz-option" onclick="answer(this,false)">パスファインダーで型抜き</div>
+</div><div class="quiz-ans-msg correct" style="display:none;margin-top:10px;padding:10px 14px;background:#e8fff0;border-radius:8px;color:#0a6b3a;font-size:13.5px;">✅ 正解！</div><div class="quiz-ans-msg wrong" style="display:none;margin-top:10px;padding:10px 14px;background:#fff8e0;border-radius:8px;color:#7a5500;font-size:13.5px;">❌ もう一度考えてみよう！</div></div>
+
+</div>
+
+<div class='section'><div class='sec-header'><div class='sec-num' style='background:#888;'>✓</div><div class='sec-title'>まとめ・チェックリスト</div></div><div class="checklist"><div class="checklist-title">📋 できるようになったか確認しよう</div><div class="check-item"><div class="check-box"></div><div class="check-text">パスファインダーで合体・型抜き・交差ができる</div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text">前面オブジェクトで型抜きの向きが正しくできる</div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text">複合パス（Ctrl+8）が使える</div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text">クリッピングマスク（Ctrl+7）で写真を形で切り抜ける</div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text">マスク適用後に画像位置を調整できる</div></div>
+</div>
+</div>
+<div class="extra-box"><div class="extra-header"><div class="extra-badge">🚀 EXTRA</div><div class="extra-title">早く終わった人への追加課題</div></div><div class="extra-item">パスファインダーで矢印の図形を作ってみよう</div>
+<div class="extra-item">文字をアウトライン化してパスファインダーで装飾してみよう</div>
+<div class="extra-item">クリッピングマスクで写真を星形に切り抜いてみよう</div>
+</div>
+
+<div style="height:40px;"></div>
+<div style="text-align:center;color:var(--muted);font-size:13px;padding:24px 0;border-top:1px solid var(--border);">
+第07回 / 全40回　｜　Illustrator基礎〜バナー制作コース　©2026
+</div>
+</div>
+<script>
+function answer(el,ok){
+  var q=el.closest('.quiz');
+  q.querySelectorAll('.quiz-option').forEach(o=>{o.style.pointerEvents='none';o.style.opacity='0.5';});
+  el.style.opacity='1';
+  el.classList.add(ok?'correct':'wrong');
+  q.querySelectorAll('.quiz-ans-msg').forEach(m=>m.style.display='none');
+  q.querySelector('.quiz-ans-msg.'+(ok?'correct':'wrong')).style.display='block';
+}
+document.querySelectorAll('.check-box').forEach(b=>b.addEventListener('click',function(){this.classList.toggle('checked');}));
+</script>
+</body>
+</html>

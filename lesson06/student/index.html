@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第06回｜ペンツールでパスを描こう①</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+:root{--il:#FF9A00;--il-dark:#1a0a00;}
+.code-block{background:#1e1e1e;border-radius:12px;overflow:hidden;margin:16px 0;box-shadow:0 4px 20px rgba(0,0,0,.15);}
+.code-header{background:#2d2d2d;padding:8px 16px;display:flex;align-items:center;gap:10px;border-bottom:1px solid #444;}
+.code-dots{display:flex;gap:5px;}.code-dots span{width:10px;height:10px;border-radius:50%;}
+.code-dots .r{background:#ff5f56;}.code-dots .y{background:#ffbd2e;}.code-dots .g{background:#27c93f;}
+.code-filename{font-family:'JetBrains Mono',monospace;font-size:12px;color:#888;flex:1;}
+.code-body{padding:20px;font-family:'JetBrains Mono',monospace;font-size:13.5px;line-height:1.8;overflow-x:auto;color:#d4d4d4;}
+kbd{display:inline-block;background:#f0f0f0;border:1px solid #ccc;border-bottom:3px solid #aaa;border-radius:5px;padding:2px 8px;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;color:#333;white-space:nowrap;}
+code{background:#f3f0ed;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;}
+</style>
+</head>
+<body>
+<div class="hero" style="background: linear-gradient(135deg, #1a0a00 0%, #3d1f00 60%, #7a3d00 100%);">
+<div class="hero-inner">
+<div class="hero-top">
+<div class="hero-lesson-num" style="color:#ffb84d;background:rgba(255,154,0,.15);border-color:rgba(255,154,0,.35);">Illustrator LESSON 06 / 40</div>
+<div class="hero-tags">
+<span class="hero-tag ht-basic" style="background:rgba(255,154,0,.2);color:rgba(255,200,100,.9);">AIパス</span>
+<span class="hero-tag ht-time">⏱ 50分</span>
+
+</div>
+</div>
+<h1 style="color:#fff;">ペンツールでパスを描こう①<br><em style="color:rgba(255,200,100,.7);font-size:16px;font-weight:400;">アンカーポイント・直線パス・曲線パスの基本</em></h1>
+<div class="hero-goal"><span class="gi">🎯</span><span>ペンツールで直線と曲線のパスを描きアンカーポイントを追加・削除できるようになる</span></div>
+</div>
+</div>
+<div class="wrap">
+
+<div class="section">
+<div class="sec-header">
+<div class="sec-num" style="background:#FF9A00;">1</div>
+<div class="sec-title">ペンツールの基本</div>
+<div class='sec-time'>0〜25分</div>
+</div>
+<table style="width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;">
+<tr style="background:#fff8f0;"><th style="padding:8px 12px;text-align:left;font-size:11px;color:#888;letter-spacing:.08em;">機能・ツール</th><th style="padding:8px 12px;text-align:left;">説明</th><th style="padding:8px 12px;text-align:left;">操作・ショートカット</th><th style="padding:8px 12px;text-align:left;">ポイント</th></tr>
+<tr>
+<td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FF9A00;white-space:nowrap;">アンカーポイント</td>
+<td style="font-size:13.5px;font-weight:700;">パスの頂点（点）</td>
+<td style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;background:#f8f8f8;padding:6px 10px;border-radius:6px;">クリックで配置</td>
+<td style="font-size:12px;color:#888;">Deleteで削除できる</td>
+</tr>
+<tr>
+<td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FF9A00;white-space:nowrap;">パス</td>
+<td style="font-size:13.5px;font-weight:700;">アンカーをつなぐ線</td>
+<td style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;background:#f8f8f8;padding:6px 10px;border-radius:6px;">開いたパスと閉じたパス</td>
+<td style="font-size:12px;color:#888;">閉じると塗りが有効になる</td>
+</tr>
+<tr>
+<td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FF9A00;white-space:nowrap;">ペンツール P</td>
+<td style="font-size:13.5px;font-weight:700;">クリックで直線アンカーを置く</td>
+<td style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;background:#f8f8f8;padding:6px 10px;border-radius:6px;">最初に戻ってクリックで閉じる</td>
+<td style="font-size:12px;color:#888;">Escで入力終了（開いたまま）</td>
+</tr>
+<tr>
+<td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FF9A00;white-space:nowrap;">アンカーの追加</td>
+<td style="font-size:13.5px;font-weight:700;">パス上クリックで追加</td>
+<td style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;background:#f8f8f8;padding:6px 10px;border-radius:6px;">+アイコンが出る</td>
+<td style="font-size:12px;color:#888;">パスの途中に追加できる</td>
+</tr>
+<tr>
+<td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FF9A00;white-space:nowrap;">アンカーの削除</td>
+<td style="font-size:13.5px;font-weight:700;">アンカー上クリックで削除</td>
+<td style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;background:#f8f8f8;padding:6px 10px;border-radius:6px;">-アイコンが出る</td>
+<td style="font-size:12px;color:#888;">不要な頂点を減らす</td>
+</tr>
+</table><p class="body-text" style="margin-top:20px;font-weight:700;">🚨 よくあるエラーと対処法</p>
+<div style="background:#fff5f5;border:1.5px solid #ffaaaa;border-radius:12px;padding:14px 18px;margin:10px 0;">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+<div style="background:#e00;color:#fff;font-size:11px;font-weight:900;padding:3px 10px;border-radius:6px;">エラー</div>
+<div style="font-weight:700;font-size:14px;color:#c00;">パスが閉じない</div>
+</div>
+<div style="font-size:13.5px;line-height:1.8;">
+<code style="background:#ffe8e8;padding:2px 6px;border-radius:4px;">最初のアンカーをクリックし忘れる</code>
+<div style="background:#e8fff0;border:1px solid rgba(10,107,58,.2);border-radius:8px;padding:10px 14px;margin-top:8px;font-size:13px;color:#0a6b3a;">✅ 対処：○のアイコンが出たらクリック・出てない場合は最初のアンカーに合わせる</div>
+</div></div>
+<div style="background:#fff5f5;border:1.5px solid #ffaaaa;border-radius:12px;padding:14px 18px;margin:10px 0;">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+<div style="background:#e00;color:#fff;font-size:11px;font-weight:900;padding:3px 10px;border-radius:6px;">エラー</div>
+<div style="font-weight:700;font-size:14px;color:#c00;">Deleteで全部消える</div>
+</div>
+<div style="font-size:13.5px;line-height:1.8;">
+<code style="background:#ffe8e8;padding:2px 6px;border-radius:4px;">EscせずにDeleteした</code>
+<div style="background:#e8fff0;border:1px solid rgba(10,107,58,.2);border-radius:8px;padding:10px 14px;margin-top:8px;font-size:13px;color:#0a6b3a;">✅ 対処：Escでペンツールの入力を終了してからDeleteで選択したアンカーを削除</div>
+</div></div>
+<div class="quiz"><div class="quiz-header"><div class="quiz-icon">❓</div><div class="quiz-title">クイズ</div></div>
+<div class="quiz-q">ペンツールのショートカットは？</div><div class="quiz-options">
+<div class="quiz-option" onclick="answer(this,true)">P</div>
+<div class="quiz-option" onclick="answer(this,false)">B</div>
+<div class="quiz-option" onclick="answer(this,false)">A</div>
+</div><div class="quiz-ans-msg correct" style="display:none;margin-top:10px;padding:10px 14px;background:#e8fff0;border-radius:8px;color:#0a6b3a;font-size:13.5px;">✅ 正解！</div><div class="quiz-ans-msg wrong" style="display:none;margin-top:10px;padding:10px 14px;background:#fff8e0;border-radius:8px;color:#7a5500;font-size:13.5px;">❌ もう一度考えてみよう！</div></div>
+<div class="quiz"><div class="quiz-header"><div class="quiz-icon">❓</div><div class="quiz-title">クイズ</div></div>
+<div class="quiz-q">閉じたパスを作るには？</div><div class="quiz-options">
+<div class="quiz-option" onclick="answer(this,false)">Escキーを押す</div>
+<div class="quiz-option" onclick="answer(this,true)">最初のアンカーに戻ってクリック</div>
+<div class="quiz-option" onclick="answer(this,false)">Enterキーを押す</div>
+</div><div class="quiz-ans-msg correct" style="display:none;margin-top:10px;padding:10px 14px;background:#e8fff0;border-radius:8px;color:#0a6b3a;font-size:13.5px;">✅ 正解！</div><div class="quiz-ans-msg wrong" style="display:none;margin-top:10px;padding:10px 14px;background:#fff8e0;border-radius:8px;color:#7a5500;font-size:13.5px;">❌ もう一度考えてみよう！</div></div>
+
+</div>
+<div class="section">
+<div class="sec-header">
+<div class="sec-num" style="background:#c94800;">2</div>
+<div class="sec-title">曲線パスを描く</div>
+<div class='sec-time'>25〜45分</div>
+</div>
+<table style="width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;">
+<tr style="background:#fff8f0;"><th style="padding:8px 12px;text-align:left;font-size:11px;color:#888;letter-spacing:.08em;">機能・ツール</th><th style="padding:8px 12px;text-align:left;">説明</th><th style="padding:8px 12px;text-align:left;">操作・ショートカット</th><th style="padding:8px 12px;text-align:left;">ポイント</th></tr>
+<tr>
+<td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FF9A00;white-space:nowrap;">ベジェ曲線</td>
+<td style="font-size:13.5px;font-weight:700;">ドラッグで曲線を作る</td>
+<td style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;background:#f8f8f8;padding:6px 10px;border-radius:6px;">方向線の長さと方向で曲がり方を制御</td>
+<td style="font-size:12px;color:#888;">プロのデザイナーも練習が必要</td>
+</tr>
+<tr>
+<td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FF9A00;white-space:nowrap;">スムーズポイント</td>
+<td style="font-size:13.5px;font-weight:700;">両側が連動する曲線</td>
+<td style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;background:#f8f8f8;padding:6px 10px;border-radius:6px;">ドラッグで作成</td>
+<td style="font-size:12px;color:#888;">なめらかな曲線に</td>
+</tr>
+<tr>
+<td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FF9A00;white-space:nowrap;">コーナーポイント</td>
+<td style="font-size:13.5px;font-weight:700;">角のある折れ点</td>
+<td style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;background:#f8f8f8;padding:6px 10px;border-radius:6px;">クリック（ドラッグなし）</td>
+<td style="font-size:12px;color:#888;">直線と曲線を切り替える</td>
+</tr>
+<tr>
+<td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FF9A00;white-space:nowrap;">Altドラッグ</td>
+<td style="font-size:13.5px;font-weight:700;">片側のハンドルだけ変える</td>
+<td style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;background:#f8f8f8;padding:6px 10px;border-radius:6px;">次の曲線だけ調整できる</td>
+<td style="font-size:12px;color:#888;">角を作りながら曲線を続ける</td>
+</tr>
+</table><p class="body-text" style="margin-top:20px;font-weight:700;">🚨 よくあるエラーと対処法</p>
+<div style="background:#fff5f5;border:1.5px solid #ffaaaa;border-radius:12px;padding:14px 18px;margin:10px 0;">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+<div style="background:#e00;color:#fff;font-size:11px;font-weight:900;padding:3px 10px;border-radius:6px;">エラー</div>
+<div style="font-weight:700;font-size:14px;color:#c00;">ドラッグしすぎて曲線が変になる</div>
+</div>
+<div style="font-size:13.5px;line-height:1.8;">
+<code style="background:#ffe8e8;padding:2px 6px;border-radius:4px;">ドラッグ量が大きすぎる</code>
+<div style="background:#e8fff0;border:1px solid rgba(10,107,58,.2);border-radius:8px;padding:10px 14px;margin-top:8px;font-size:13px;color:#0a6b3a;">✅ 対処：短くドラッグするとなだらかな曲線になる</div>
+</div></div>
+<div class="quiz"><div class="quiz-header"><div class="quiz-icon">❓</div><div class="quiz-title">クイズ</div></div>
+<div class="quiz-q">ペンツールで曲線を描くにはどうする？</div><div class="quiz-options">
+<div class="quiz-option" onclick="answer(this,false)">クリックだけ</div>
+<div class="quiz-option" onclick="answer(this,true)">ドラッグしながらアンカーを置く</div>
+<div class="quiz-option" onclick="answer(this,false)">Shiftを押す</div>
+</div><div class="quiz-ans-msg correct" style="display:none;margin-top:10px;padding:10px 14px;background:#e8fff0;border-radius:8px;color:#0a6b3a;font-size:13.5px;">✅ 正解！</div><div class="quiz-ans-msg wrong" style="display:none;margin-top:10px;padding:10px 14px;background:#fff8e0;border-radius:8px;color:#7a5500;font-size:13.5px;">❌ もう一度考えてみよう！</div></div>
+
+</div>
+
+<div class='section'><div class='sec-header'><div class='sec-num' style='background:#888;'>✓</div><div class='sec-title'>まとめ・チェックリスト</div></div><div class="checklist"><div class="checklist-title">📋 できるようになったか確認しよう</div><div class="check-item"><div class="check-box"></div><div class="check-text">ペンツールで直線の多角形が描ける</div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text">閉じたパスと開いたパスの違いがわかる</div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text">アンカーポイントの追加・削除ができる</div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text">ドラッグで曲線パスが描ける</div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text">コーナーポイントとスムーズポイントの違いがわかる</div></div>
+</div>
+</div>
+<div class="extra-box"><div class="extra-header"><div class="extra-badge">🚀 EXTRA</div><div class="extra-title">早く終わった人への追加課題</div></div><div class="extra-item">ペンツールでりんごのシルエットを描いてみよう</div>
+<div class="extra-item">ペンツール練習サイト（The Bezier Game）でゲーム感覚で練習しよう</div>
+<div class="extra-item">曲線ツール（Shaper）も試してみよう</div>
+</div>
+
+<div style="height:40px;"></div>
+<div style="text-align:center;color:var(--muted);font-size:13px;padding:24px 0;border-top:1px solid var(--border);">
+第06回 / 全40回　｜　Illustrator基礎〜バナー制作コース　©2026
+</div>
+</div>
+<script>
+function answer(el,ok){
+  var q=el.closest('.quiz');
+  q.querySelectorAll('.quiz-option').forEach(o=>{o.style.pointerEvents='none';o.style.opacity='0.5';});
+  el.style.opacity='1';
+  el.classList.add(ok?'correct':'wrong');
+  q.querySelectorAll('.quiz-ans-msg').forEach(m=>m.style.display='none');
+  q.querySelector('.quiz-ans-msg.'+(ok?'correct':'wrong')).style.display='block';
+}
+document.querySelectorAll('.check-box').forEach(b=>b.addEventListener('click',function(){this.classList.toggle('checked');}));
+</script>
+</body>
+</html>

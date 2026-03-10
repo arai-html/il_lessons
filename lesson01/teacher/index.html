@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【講師用】第01回｜Illustratorを起動しよう</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+:root{--il:#FF9A00;--il-dark:#1a0a00;}
+.code-block{background:#1e1e1e;border-radius:12px;overflow:hidden;margin:16px 0;box-shadow:0 4px 20px rgba(0,0,0,.15);}
+.code-header{background:#2d2d2d;padding:8px 16px;display:flex;align-items:center;gap:10px;border-bottom:1px solid #444;}
+.code-dots{display:flex;gap:5px;}.code-dots span{width:10px;height:10px;border-radius:50%;}
+.code-dots .r{background:#ff5f56;}.code-dots .y{background:#ffbd2e;}.code-dots .g{background:#27c93f;}
+.code-filename{font-family:'JetBrains Mono',monospace;font-size:12px;color:#888;flex:1;}
+.code-body{padding:20px;font-family:'JetBrains Mono',monospace;font-size:13.5px;line-height:1.8;overflow-x:auto;color:#d4d4d4;}
+kbd{display:inline-block;background:#f0f0f0;border:1px solid #ccc;border-bottom:3px solid #aaa;border-radius:5px;padding:2px 8px;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;color:#333;white-space:nowrap;}
+code{background:#f3f0ed;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;}
+</style>
+</head>
+<body>
+<div class="hero" style="background: linear-gradient(135deg, #1a0a00 0%, #3d1f00 60%, #7a3d00 100%);">
+<div class="hero-inner">
+<div class="hero-top">
+<div class="hero-lesson-num" style="color:#ffb84d;background:rgba(255,154,0,.15);border-color:rgba(255,154,0,.35);">Illustrator LESSON 01 / 40</div>
+<div class="hero-tags">
+<span class="hero-tag ht-basic" style="background:rgba(255,154,0,.2);color:rgba(255,200,100,.9);">AI基礎</span>
+<span class="hero-tag ht-time">⏱ 50分</span>
+<span class="hero-tag" style="background:rgba(255,200,0,.2);color:#ffe066;font-size:11px;font-weight:700;padding:3px 10px;border-radius:5px;">🎓 講師用</span>
+</div>
+</div>
+<h1 style="color:#fff;">Illustratorを起動しよう<br><em style="color:rgba(255,200,100,.7);font-size:16px;font-weight:400;">画面の名前・ツールパネル・ドキュメント設定</em></h1>
+<div class="hero-goal"><span class="gi">🎯</span><span>Illustratorを起動して画面各部の名前を覚え、新規ドキュメントを作成できるようになる</span></div>
+</div>
+</div>
+<div class="wrap">
+<div class="section-label" style="font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--muted);text-transform:uppercase;margin-bottom:14px;">📅 50分の流れ</div>
+<div class="timeline">
+<div class="tl-item"><div class="tl-row"><div class="tl-time">0〜10分</div><div class="tl-label">Illustratorの概要・Photoshopとの違いを説明</div><div class="tl-badge tb-talk">話す</div></div></div>
+<div class="tl-item"><div class="tl-row"><div class="tl-time">10〜25分</div><div class="tl-label">起動〜画面各部の名前を確認</div><div class="tl-badge tb-do">操作</div></div></div>
+<div class="tl-item"><div class="tl-row"><div class="tl-time">25〜40分</div><div class="tl-label">新規ドキュメント作成・保存</div><div class="tl-badge tb-do">操作</div></div></div>
+<div class="tl-item"><div class="tl-row"><div class="tl-time">40〜50分</div><div class="tl-label">クイズ・まとめ</div><div class="tl-badge tb-extra">まとめ</div></div></div>
+</div>
+
+<div class="section">
+<div class="sec-header">
+<div class="sec-num" style="background:#FF9A00;">1</div>
+<div class="sec-title">IllustratorとPhotoshopの違い</div>
+<div class='sec-time'>0〜15分</div>
+</div>
+<div class="callout info"><div class="callout-icon">💬</div><div class="callout-body"><strong>講師がこう話す</strong>「Photoshopはピクセルとよばれるドットでできたラスターグラフィックスのソフトです。Illustratorはベクターグラフィックスで、数式で図形を描くため拡大しても絶対に劣化しません。ロゴ・チラシ・バナーの文字や図形はIllustratorが得意です。」</div></div>
+<table style="width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;">
+<tr style="background:#fff8f0;"><th style="padding:8px 12px;text-align:left;font-size:11px;color:#888;letter-spacing:.08em;">機能・ツール</th><th style="padding:8px 12px;text-align:left;">説明</th><th style="padding:8px 12px;text-align:left;">操作・ショートカット</th><th style="padding:8px 12px;text-align:left;">ポイント</th></tr>
+<tr>
+<td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FF9A00;white-space:nowrap;">ラスター（PS）</td>
+<td style="font-size:13.5px;font-weight:700;">ピクセルの集まり</td>
+<td style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;background:#f8f8f8;padding:6px 10px;border-radius:6px;">拡大するとギザギザになる</td>
+<td style="font-size:12px;color:#888;">写真・合成に得意</td>
+</tr>
+<tr>
+<td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FF9A00;white-space:nowrap;">ベクター（AI）</td>
+<td style="font-size:13.5px;font-weight:700;">数式で描かれた図形</td>
+<td style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;background:#f8f8f8;padding:6px 10px;border-radius:6px;">拡大しても絶対劣化しない</td>
+<td style="font-size:12px;color:#888;">ロゴ・図形・文字に得意</td>
+</tr>
+<tr>
+<td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FF9A00;white-space:nowrap;">AI拡張子</td>
+<td style="font-size:13.5px;font-weight:700;">.aiがIllustratorのネイティブ形式</td>
+<td style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;background:#f8f8f8;padding:6px 10px;border-radius:6px;">書き出しはPDF・PNG・SVGなど</td>
+<td style="font-size:12px;color:#888;">入稿はPDF・配信はPNG</td>
+</tr>
+</table><p class="body-text" style="margin-top:20px;font-weight:700;">🚨 よくあるエラーと対処法</p>
+<div style="background:#fff5f5;border:1.5px solid #ffaaaa;border-radius:12px;padding:14px 18px;margin:10px 0;">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+<div style="background:#e00;color:#fff;font-size:11px;font-weight:900;padding:3px 10px;border-radius:6px;">エラー</div>
+<div style="font-weight:700;font-size:14px;color:#c00;">写真をIllustratorで編集しようとする</div>
+</div>
+<div style="font-size:13.5px;line-height:1.8;">
+<code style="background:#ffe8e8;padding:2px 6px;border-radius:4px;">写真はPhotoshopで加工してAIに配置するのが正解</code>
+<div style="background:#e8fff0;border:1px solid rgba(10,107,58,.2);border-radius:8px;padding:10px 14px;margin-top:8px;font-size:13px;color:#0a6b3a;">✅ 対処：役割を分担して使い分けよう</div>
+</div></div>
+<div class="callout tip"><div class="callout-icon">👆</div><div class="callout-body"><strong>講師メモ</strong>A4チラシを印刷サイズに拡大した見本を見せると違いが直感的に伝わる。</div></div>
+<div class="quiz"><div class="quiz-header"><div class="quiz-icon">❓</div><div class="quiz-title">クイズ</div></div>
+<div class="quiz-q">拡大しても劣化しないグラフィックはどちら？</div><div class="quiz-options">
+<div class="quiz-option wrong">ラスター（Photoshop）</div>
+<div class="quiz-option correct">ベクター（Illustrator）✅</div>
+<div class="quiz-option wrong">どちらも同じ</div>
+</div></div>
+
+</div>
+<div class="section">
+<div class="sec-header">
+<div class="sec-num" style="background:#c94800;">2</div>
+<div class="sec-title">画面各部の名前と新規作成</div>
+<div class='sec-time'>15〜45分</div>
+</div>
+<div class="callout info"><div class="callout-icon">💬</div><div class="callout-body"><strong>講師がこう話す</strong>「画面はメニューバー・ツールパネル・コントロールバー・アートボード・プロパティパネルで構成されています。アートボードが実際の印刷・書き出しエリアです。」</div></div>
+<table style="width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;">
+<tr style="background:#fff8f0;"><th style="padding:8px 12px;text-align:left;font-size:11px;color:#888;letter-spacing:.08em;">機能・ツール</th><th style="padding:8px 12px;text-align:left;">説明</th><th style="padding:8px 12px;text-align:left;">操作・ショートカット</th><th style="padding:8px 12px;text-align:left;">ポイント</th></tr>
+<tr>
+<td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FF9A00;white-space:nowrap;">アートボード</td>
+<td style="font-size:13.5px;font-weight:700;">実際の制作エリア</td>
+<td style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;background:#f8f8f8;padding:6px 10px;border-radius:6px;">白い四角形の部分</td>
+<td style="font-size:12px;color:#888;">ここに入ったものだけ書き出される</td>
+</tr>
+<tr>
+<td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FF9A00;white-space:nowrap;">ツールパネル</td>
+<td style="font-size:13.5px;font-weight:700;">左側のツール一覧</td>
+<td style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;background:#f8f8f8;padding:6px 10px;border-radius:6px;">V=選択・A=ダイレクト選択など</td>
+<td style="font-size:12px;color:#888;">ショートカット1文字で切替</td>
+</tr>
+<tr>
+<td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FF9A00;white-space:nowrap;">プロパティパネル</td>
+<td style="font-size:13.5px;font-weight:700;">右側の設定パネル</td>
+<td style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;background:#f8f8f8;padding:6px 10px;border-radius:6px;">選択中のオブジェクトの情報が出る</td>
+<td style="font-size:12px;color:#888;">文字・色・サイズを変更</td>
+</tr>
+<tr>
+<td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FF9A00;white-space:nowrap;">新規ドキュメント</td>
+<td style="font-size:13.5px;font-weight:700;">Ctrl+N で作成</td>
+<td style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;background:#f8f8f8;padding:6px 10px;border-radius:6px;">バナー制作はピクセル・RGB・72dpi</td>
+<td style="font-size:12px;color:#888;">印刷はmm・CMYK・300dpi</td>
+</tr>
+</table><p class="body-text" style="margin-top:20px;font-weight:700;">🚨 よくあるエラーと対処法</p>
+<div style="background:#fff5f5;border:1.5px solid #ffaaaa;border-radius:12px;padding:14px 18px;margin:10px 0;">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+<div style="background:#e00;color:#fff;font-size:11px;font-weight:900;padding:3px 10px;border-radius:6px;">エラー</div>
+<div style="font-weight:700;font-size:14px;color:#c00;">アートボードの外に描いてしまう</div>
+</div>
+<div style="font-size:13.5px;line-height:1.8;">
+<code style="background:#ffe8e8;padding:2px 6px;border-radius:4px;">書き出すと表示されない</code>
+<div style="background:#e8fff0;border:1px solid rgba(10,107,58,.2);border-radius:8px;padding:10px 14px;margin-top:8px;font-size:13px;color:#0a6b3a;">✅ 対処：必ずアートボードの中に描く</div>
+</div></div>
+<div style="background:#fff5f5;border:1.5px solid #ffaaaa;border-radius:12px;padding:14px 18px;margin:10px 0;">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+<div style="background:#e00;color:#fff;font-size:11px;font-weight:900;padding:3px 10px;border-radius:6px;">エラー</div>
+<div style="font-weight:700;font-size:14px;color:#c00;">解像度を間違える</div>
+</div>
+<div style="font-size:13.5px;line-height:1.8;">
+<code style="background:#ffe8e8;padding:2px 6px;border-radius:4px;">印刷物を72dpiで作った</code>
+<div style="background:#e8fff0;border:1px solid rgba(10,107,58,.2);border-radius:8px;padding:10px 14px;margin-top:8px;font-size:13px;color:#0a6b3a;">✅ 対処：用途に合わせてdpiを設定する</div>
+</div></div>
+<div class="callout tip"><div class="callout-icon">👆</div><div class="callout-body"><strong>講師メモ</strong>ツールパネルはPhotoshopと似ているが並び順が違う。混乱しないよう位置を一緒に確認する。</div></div>
+<div class="quiz"><div class="quiz-header"><div class="quiz-icon">❓</div><div class="quiz-title">クイズ</div></div>
+<div class="quiz-q">Webバナーの新規作成に適した設定は？</div><div class="quiz-options">
+<div class="quiz-option wrong">mm・CMYK・300dpi</div>
+<div class="quiz-option correct">px・RGB・72dpi✅</div>
+<div class="quiz-option wrong">px・CMYK・72dpi</div>
+</div></div>
+<div class="quiz"><div class="quiz-header"><div class="quiz-icon">❓</div><div class="quiz-title">クイズ</div></div>
+<div class="quiz-q">アートボードとは？</div><div class="quiz-options">
+<div class="quiz-option wrong">全画面の作業エリア</div>
+<div class="quiz-option correct">実際に書き出されるエリア✅</div>
+<div class="quiz-option wrong">ツールパネルの別名</div>
+</div></div>
+
+</div>
+
+<div class='section'><div class='sec-header'><div class='sec-num' style='background:#888;'>✓</div><div class='sec-title'>まとめ・チェックリスト</div></div><div class="checklist"><div class="checklist-title">📋 できるようになったか確認しよう</div><div class="check-item"><div class="check-box"></div><div class="check-text">IllustratorとPhotoshopの違いが説明できる</div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text">画面各部（メニュー・ツール・アートボード・プロパティ）の名前がわかる</div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text">px・RGB・72dpiでバナー用ドキュメントが作れる</div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text">ファイルを.aiで保存できる</div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text">ツールパネルでVキー（選択ツール）に切り替えられる</div></div>
+</div>
+</div>
+<div class="extra-box"><div class="extra-header"><div class="extra-badge">🚀 EXTRA</div><div class="extra-title">早く終わった人への追加課題</div></div><div class="extra-item">A4サイズ（210×297mm・CMYK・300dpi）の印刷用ドキュメントも作ってみよう</div>
+<div class="extra-item">Illustratorのバージョン・ライセンス形態（Creative Cloud）を調べてみよう</div>
+<div class="extra-item">アートボードを2枚並べて（名刺表・裏など）作ってみよう</div>
+</div>
+
+<div style="height:40px;"></div>
+<div style="text-align:center;color:var(--muted);font-size:13px;padding:24px 0;border-top:1px solid var(--border);">
+第01回 / 全40回　｜　Illustrator基礎〜バナー制作コース　©2026
+</div>
+</div>
+<script>
+document.querySelectorAll('.check-box').forEach(b=>b.addEventListener('click',function(){this.classList.toggle('checked');}));
+</script>
+</body>
+</html>

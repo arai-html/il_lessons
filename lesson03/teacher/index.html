@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【講師用】第03回｜色を塗ろう・グラデーションをかけよう</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+:root{--il:#FF9A00;--il-dark:#1a0a00;}
+.code-block{background:#1e1e1e;border-radius:12px;overflow:hidden;margin:16px 0;box-shadow:0 4px 20px rgba(0,0,0,.15);}
+.code-header{background:#2d2d2d;padding:8px 16px;display:flex;align-items:center;gap:10px;border-bottom:1px solid #444;}
+.code-dots{display:flex;gap:5px;}.code-dots span{width:10px;height:10px;border-radius:50%;}
+.code-dots .r{background:#ff5f56;}.code-dots .y{background:#ffbd2e;}.code-dots .g{background:#27c93f;}
+.code-filename{font-family:'JetBrains Mono',monospace;font-size:12px;color:#888;flex:1;}
+.code-body{padding:20px;font-family:'JetBrains Mono',monospace;font-size:13.5px;line-height:1.8;overflow-x:auto;color:#d4d4d4;}
+kbd{display:inline-block;background:#f0f0f0;border:1px solid #ccc;border-bottom:3px solid #aaa;border-radius:5px;padding:2px 8px;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;color:#333;white-space:nowrap;}
+code{background:#f3f0ed;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;}
+</style>
+</head>
+<body>
+<div class="hero" style="background: linear-gradient(135deg, #1a0a00 0%, #3d1f00 60%, #7a3d00 100%);">
+<div class="hero-inner">
+<div class="hero-top">
+<div class="hero-lesson-num" style="color:#ffb84d;background:rgba(255,154,0,.15);border-color:rgba(255,154,0,.35);">Illustrator LESSON 03 / 40</div>
+<div class="hero-tags">
+<span class="hero-tag ht-basic" style="background:rgba(255,154,0,.2);color:rgba(255,200,100,.9);">AI基礎</span>
+<span class="hero-tag ht-time">⏱ 50分</span>
+<span class="hero-tag" style="background:rgba(255,200,0,.2);color:#ffe066;font-size:11px;font-weight:700;padding:3px 10px;border-radius:5px;">🎓 講師用</span>
+</div>
+</div>
+<h1 style="color:#fff;">色を塗ろう・グラデーションをかけよう<br><em style="color:rgba(255,200,100,.7);font-size:16px;font-weight:400;">塗りと線・カラーパネル・グラデーションツール</em></h1>
+<div class="hero-goal"><span class="gi">🎯</span><span>塗りと線の色設定・スウォッチの使い方・グラデーションを設定できるようになる</span></div>
+</div>
+</div>
+<div class="wrap">
+<div class="section-label" style="font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--muted);text-transform:uppercase;margin-bottom:14px;">📅 50分の流れ</div>
+<div class="timeline">
+<div class="tl-item"><div class="tl-row"><div class="tl-time">0〜10分</div><div class="tl-label">塗りと線の概念を説明</div><div class="tl-badge tb-talk">話す</div></div></div>
+<div class="tl-item"><div class="tl-row"><div class="tl-time">10〜30分</div><div class="tl-label">カラーパネル・スウォッチで色を塗る</div><div class="tl-badge tb-do">操作</div></div></div>
+<div class="tl-item"><div class="tl-row"><div class="tl-time">30〜45分</div><div class="tl-label">グラデーションツールで背景を作る</div><div class="tl-badge tb-do">操作</div></div></div>
+<div class="tl-item"><div class="tl-row"><div class="tl-time">40〜50分</div><div class="tl-label">クイズ・まとめ</div><div class="tl-badge tb-extra">まとめ</div></div></div>
+</div>
+
+<div class="section">
+<div class="sec-header">
+<div class="sec-num" style="background:#FF9A00;">1</div>
+<div class="sec-title">塗りと線の色設定</div>
+<div class='sec-time'>0〜25分</div>
+</div>
+<div class="callout info"><div class="callout-icon">💬</div><div class="callout-body"><strong>講師がこう話す</strong>「Illustratorはオブジェクトに『塗り』と『線』の2種類の色を設定できます。ツールパネル下部の2つの四角が塗りと線です。前面にある方が選択中です。Xキーで切り替えられます。」</div></div>
+<table style="width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;">
+<tr style="background:#fff8f0;"><th style="padding:8px 12px;text-align:left;font-size:11px;color:#888;letter-spacing:.08em;">機能・ツール</th><th style="padding:8px 12px;text-align:left;">説明</th><th style="padding:8px 12px;text-align:left;">操作・ショートカット</th><th style="padding:8px 12px;text-align:left;">ポイント</th></tr>
+<tr>
+<td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FF9A00;white-space:nowrap;">塗り（Fill）</td>
+<td style="font-size:13.5px;font-weight:700;">図形の内側の色</td>
+<td style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;background:#f8f8f8;padding:6px 10px;border-radius:6px;">ツールパネル下部・前面の四角</td>
+<td style="font-size:12px;color:#888;">なしにする場合は斜線のアイコン</td>
+</tr>
+<tr>
+<td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FF9A00;white-space:nowrap;">線（Stroke）</td>
+<td style="font-size:13.5px;font-weight:700;">図形の輪郭の色・太さ</td>
+<td style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;background:#f8f8f8;padding:6px 10px;border-radius:6px;">線パネルで太さ・種類を設定</td>
+<td style="font-size:12px;color:#888;">線幅はpxまたはptで指定</td>
+</tr>
+<tr>
+<td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FF9A00;white-space:nowrap;">Xキー</td>
+<td style="font-size:13.5px;font-weight:700;">塗りと線を切り替え</td>
+<td style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;background:#f8f8f8;padding:6px 10px;border-radius:6px;">よく使うショートカット</td>
+<td style="font-size:12px;color:#888;">/キーでなし（透明）に</td>
+</tr>
+<tr>
+<td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FF9A00;white-space:nowrap;">16進数カラー</td>
+<td style="font-size:13.5px;font-weight:700;">正確な色指定</td>
+<td style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;background:#f8f8f8;padding:6px 10px;border-radius:6px;">カラーパネルに#を入力</td>
+<td style="font-size:12px;color:#888;">ブランドカラーの指定に必須</td>
+</tr>
+<tr>
+<td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FF9A00;white-space:nowrap;">スウォッチ</td>
+<td style="font-size:13.5px;font-weight:700;">よく使う色を保存</td>
+<td style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;background:#f8f8f8;padding:6px 10px;border-radius:6px;">ウィンドウ→スウォッチ</td>
+<td style="font-size:12px;color:#888;">カラーガイドも使える</td>
+</tr>
+</table><p class="body-text" style="margin-top:20px;font-weight:700;">🚨 よくあるエラーと対処法</p>
+<div style="background:#fff5f5;border:1.5px solid #ffaaaa;border-radius:12px;padding:14px 18px;margin:10px 0;">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+<div style="background:#e00;color:#fff;font-size:11px;font-weight:900;padding:3px 10px;border-radius:6px;">エラー</div>
+<div style="font-weight:700;font-size:14px;color:#c00;">塗りと線を逆に設定する</div>
+</div>
+<div style="font-size:13.5px;line-height:1.8;">
+<code style="background:#ffe8e8;padding:2px 6px;border-radius:4px;">線のつもりが塗りになっている</code>
+<div style="background:#e8fff0;border:1px solid rgba(10,107,58,.2);border-radius:8px;padding:10px 14px;margin-top:8px;font-size:13px;color:#0a6b3a;">✅ 対処：XキーかTキーで前面の四角を確認してから色を変える</div>
+</div></div>
+<div style="background:#fff5f5;border:1.5px solid #ffaaaa;border-radius:12px;padding:14px 18px;margin:10px 0;">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+<div style="background:#e00;color:#fff;font-size:11px;font-weight:900;padding:3px 10px;border-radius:6px;">エラー</div>
+<div style="font-weight:700;font-size:14px;color:#c00;">白い図形が見えない</div>
+</div>
+<div style="font-size:13.5px;line-height:1.8;">
+<code style="background:#ffe8e8;padding:2px 6px;border-radius:4px;">背景が白で塗りも白の場合</code>
+<div style="background:#e8fff0;border:1px solid rgba(10,107,58,.2);border-radius:8px;padding:10px 14px;margin-top:8px;font-size:13px;color:#0a6b3a;">✅ 対処：線を黒に設定して位置を確認</div>
+</div></div>
+<div class="callout tip"><div class="callout-icon">👆</div><div class="callout-body"><strong>講師メモ</strong>塗りと線の概念はPhotoshopと似ているが役割が違う。最初にしっかり説明する。</div></div>
+<div class="quiz"><div class="quiz-header"><div class="quiz-icon">❓</div><div class="quiz-title">クイズ</div></div>
+<div class="quiz-q">塗りと線を素早く切り替えるキーは？</div><div class="quiz-options">
+<div class="quiz-option wrong">Tキー</div>
+<div class="quiz-option correct">Xキー✅</div>
+<div class="quiz-option wrong">Dキー</div>
+</div></div>
+<div class="quiz"><div class="quiz-header"><div class="quiz-icon">❓</div><div class="quiz-title">クイズ</div></div>
+<div class="quiz-q">塗りを透明（なし）にするキーは？</div><div class="quiz-options">
+<div class="quiz-option correct">/キー✅</div>
+<div class="quiz-option wrong">0キー</div>
+<div class="quiz-option wrong">Delキー</div>
+</div></div>
+
+</div>
+<div class="section">
+<div class="sec-header">
+<div class="sec-num" style="background:#c94800;">2</div>
+<div class="sec-title">グラデーションの設定</div>
+<div class='sec-time'>25〜45分</div>
+</div>
+<div class="callout info"><div class="callout-icon">💬</div><div class="callout-body"><strong>講師がこう話す</strong>「グラデーションは塗りの種類を『グラデーション』に切り替えて設定します。グラデーションパネルで種類（線形・円形）・角度・カラー分岐点を設定します。グラデーションツール（G）でアートボード上をドラッグすると方向を変えられます。」</div></div>
+<table style="width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;">
+<tr style="background:#fff8f0;"><th style="padding:8px 12px;text-align:left;font-size:11px;color:#888;letter-spacing:.08em;">機能・ツール</th><th style="padding:8px 12px;text-align:left;">説明</th><th style="padding:8px 12px;text-align:left;">操作・ショートカット</th><th style="padding:8px 12px;text-align:left;">ポイント</th></tr>
+<tr>
+<td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FF9A00;white-space:nowrap;">線形グラデーション</td>
+<td style="font-size:13.5px;font-weight:700;">左→右・上→下など直線的</td>
+<td style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;background:#f8f8f8;padding:6px 10px;border-radius:6px;">最もよく使うグラデーション</td>
+<td style="font-size:12px;color:#888;">バナー背景に最適</td>
+</tr>
+<tr>
+<td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FF9A00;white-space:nowrap;">円形グラデーション</td>
+<td style="font-size:13.5px;font-weight:700;">中心から外に広がる</td>
+<td style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;background:#f8f8f8;padding:6px 10px;border-radius:6px;">スポットライト効果など</td>
+<td style="font-size:12px;color:#888;">強調したい中心があるとき</td>
+</tr>
+<tr>
+<td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FF9A00;white-space:nowrap;">グラデーションツール G</td>
+<td style="font-size:13.5px;font-weight:700;">方向・位置をドラッグで調整</td>
+<td style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;background:#f8f8f8;padding:6px 10px;border-radius:6px;">アートボード上でドラッグ</td>
+<td style="font-size:12px;color:#888;">直感的に調整できる</td>
+</tr>
+<tr>
+<td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FF9A00;white-space:nowrap;">カラーストップ</td>
+<td style="font-size:13.5px;font-weight:700;">グラデーションの色分岐点</td>
+<td style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;background:#f8f8f8;padding:6px 10px;border-radius:6px;">バーをダブルクリックで色変更</td>
+<td style="font-size:12px;color:#888;">クリックで追加・ドラッグで削除</td>
+</tr>
+</table><p class="body-text" style="margin-top:20px;font-weight:700;">🚨 よくあるエラーと対処法</p>
+<div style="background:#fff5f5;border:1.5px solid #ffaaaa;border-radius:12px;padding:14px 18px;margin:10px 0;">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+<div style="background:#e00;color:#fff;font-size:11px;font-weight:900;padding:3px 10px;border-radius:6px;">エラー</div>
+<div style="font-weight:700;font-size:14px;color:#c00;">グラデーションが図形に適用されない</div>
+</div>
+<div style="font-size:13.5px;line-height:1.8;">
+<code style="background:#ffe8e8;padding:2px 6px;border-radius:4px;">塗りがグラデーションになっていない</code>
+<div style="background:#e8fff0;border:1px solid rgba(10,107,58,.2);border-radius:8px;padding:10px 14px;margin-top:8px;font-size:13px;color:#0a6b3a;">✅ 対処：塗りアイコンを選択してからグラデーションを選ぶ</div>
+</div></div>
+<div class="callout tip"><div class="callout-icon">👆</div><div class="callout-body"><strong>講師メモ</strong>グラデーションの分岐点（カラーストップ）をダブルクリックで色変更できることを実演する。</div></div>
+<div class="quiz"><div class="quiz-header"><div class="quiz-icon">❓</div><div class="quiz-title">クイズ</div></div>
+<div class="quiz-q">グラデーションツールのショートカットは？</div><div class="quiz-options">
+<div class="quiz-option correct">G✅</div>
+<div class="quiz-option wrong">Shift+G</div>
+<div class="quiz-option wrong">Ctrl+G</div>
+</div></div>
+<div class="quiz"><div class="quiz-header"><div class="quiz-icon">❓</div><div class="quiz-title">クイズ</div></div>
+<div class="quiz-q">カラーストップの色を変えるには？</div><div class="quiz-options">
+<div class="quiz-option wrong">右クリック</div>
+<div class="quiz-option correct">ダブルクリック✅</div>
+<div class="quiz-option wrong">Ctrl+クリック</div>
+</div></div>
+
+</div>
+
+<div class='section'><div class='sec-header'><div class='sec-num' style='background:#888;'>✓</div><div class='sec-title'>まとめ・チェックリスト</div></div><div class="checklist"><div class="checklist-title">📋 できるようになったか確認しよう</div><div class="check-item"><div class="check-box"></div><div class="check-text">塗りと線を正しく設定できる（Xキーで切り替えできる）</div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text">16進数カラーで正確な色を指定できる</div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text">スウォッチにカラーを登録できる</div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text">線形・円形グラデーションを設定できる</div></div>
+<div class="check-item"><div class="check-box"></div><div class="check-text">グラデーションツールで方向を調整できる</div></div>
+</div>
+</div>
+<div class="extra-box"><div class="extra-header"><div class="extra-badge">🚀 EXTRA</div><div class="extra-title">早く終わった人への追加課題</div></div><div class="extra-item">フリーグラデーション（Illustrator CC以降）を試してみよう</div>
+<div class="extra-item">スウォッチに会社のブランドカラーを登録してみよう</div>
+<div class="extra-item">グラデーションを3色以上で設定してみよう</div>
+</div>
+
+<div style="height:40px;"></div>
+<div style="text-align:center;color:var(--muted);font-size:13px;padding:24px 0;border-top:1px solid var(--border);">
+第03回 / 全40回　｜　Illustrator基礎〜バナー制作コース　©2026
+</div>
+</div>
+<script>
+document.querySelectorAll('.check-box').forEach(b=>b.addEventListener('click',function(){this.classList.toggle('checked');}));
+</script>
+</body>
+</html>
